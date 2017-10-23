@@ -1,1 +1,0 @@
-"use strict";document.getElementById("download").addEventListener("click",function(){ga("send","event","Deliric","Download","cta-button")});
