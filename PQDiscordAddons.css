@@ -70,3 +70,11 @@ top:80px;left:115px;width:150px;display:flex!important;}
 #friends .friends-table .friends-row .friends-column-status .status.status-unknown{border:none;}
 #friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-remove:hover{background-color:rgb(199, 0, 67) !important;}
 #friends .friends-table .friends-table-body > div{display:flex !important;flex-flow:row wrap !important;justify-content:center !important;}
+
+/* LOADING ANIMATION */
+:root {
+        --load1: "DON'T";
+        --load2: "EAT";
+        --load3: "GLUE";
+}
+
