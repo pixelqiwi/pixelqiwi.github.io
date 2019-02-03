@@ -1,3 +1,3 @@
 # pixelqiwi.github.io
 
-Hi. If you're seein this then something went awfully wrong.
+Hi. If you're seeing this then something went awfully wrong.
