@@ -1,0 +1,206 @@
+html {
+    font-family: Din Pro, Arial, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: #111;
+    color: white;
+}
+
+.stripes-bg {
+    position: fixed;
+    background: url(https://the-truth-is.nobody-loves.me/i/msjmbi7p.png);
+    animation: 60s scroll infinite linear;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+.fg-box {
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.60);
+    padding: 12px;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
+}
+
+.fg-inside {
+    display: inline-flex;
+}
+
+.side-image {
+    max-width: 95%;
+    justify-self: center;
+    margin: 4px
+}
+
+.banner-img {
+    max-height: 80px;
+}
+
+.sidebar {
+    text-align: center;
+}
+
+.notsidebar {
+}
+
+.insidebanner {
+    max-height: 150px;
+    justify-content: space-between;
+    display: flex;
+    width: -webkit-fill-available;
+    margin: 8;
+}
+
+.text-inside {
+}
+
+.titletext {
+    font-family: Din Pro, Arial;
+    font-weight: 900;
+    font-size: 42px;
+    padding-left: 58px;
+}
+
+.header-menu-text {
+    padding: 4 10 6 10;
+    background: #fc0;
+    text-decoration: none !important;
+    color: black !important;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
+    transition: background 0.1s linear;
+}
+
+.header-menu-text:hover {
+    background: #fff !important;
+}
+
+@keyframes scroll {
+    100% {
+        background-position: -2000px 0;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    ._1 {
+        flex: 1;
+    }
+
+    ._2 {
+        flex: 2;
+    }
+
+    ._3 {
+        flex: 3;
+    }
+
+    ._4 {
+        flex: 4;
+    }
+
+    ._5 {
+        flex: 5;
+    }
+
+    ._6 {
+        flex: 6;
+    }
+
+    ._7 {
+        flex: 7;
+    }
+
+    ._8 {
+        flex: 8;
+    }
+
+    ._9 {
+        flex: 9;
+    }
+
+    ._10 {
+        flex: 10;
+    }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inherit;
+    z-index: 2;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(#fc0, #da0);
+    min-width: max-content;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black !important;
+    padding: 4 10 6 10;
+    text-decoration: none !important;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.1s linear
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #fff;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bottom-header {
+    justify-content: space-between;
+    display: flex;
+}
+
+.logoicon {
+    background-image: url(https://the-truth-is.nobody-loves.me/i/80whp0ki.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: bottom left;
+}
+
+img {
+    border-radius: 4px;
+    filter: grayscale(1) contrast(1.2);
+    transition: filter 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+img:hover {
+    filter: none;
+    transition: filter 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+.unused {
+    background: #666;
+    cursor: default;
+}
+
+.unused:hover {
+    background: #666 !important;
+}
+
+a:-webkit-any-link {
+    color: #ffcc00;
+    cursor: pointer;
+    text-decoration: underline;
+}
