@@ -7,6 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+	background-color: #030303;
     background-image: linear-gradient(180deg, #404040 50%, #030303 50%);
     color: white;
 }
@@ -91,55 +92,24 @@ body {
 }
 
 @media screen and (min-width: 800px) {
-    ._1 {
-        flex: 1;
-    }
-
-    ._2 {
-        flex: 2;
-    }
-
-    ._3 {
-        flex: 3;
-    }
-
-    ._4 {
-        flex: 4;
-    }
-
-    ._5 {
-        flex: 5;
-    }
-
-    ._6 {
-        flex: 6;
-    }
-
-    ._7 {
-        flex: 7;
-    }
-
-    ._8 {
-        flex: 8;
-    }
-
-    ._9 {
-        flex: 9;
-    }
-
-    ._10 {
-        flex: 10;
-    }
+    ._1{flex: 1;}
+    ._2{flex: 2;}
+    ._3{flex: 3;}
+    ._4{flex: 4;}
+    ._5{flex: 5;}
+    ._6{flex: 6;}
+    ._7{flex: 7;}
+    ._8{flex: 8;}
+    ._9{flex: 9;}
+    ._10{flex: 10;}
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inherit;
     z-index: 2;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -149,7 +119,6 @@ body {
     border-radius: 4px;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
     color: black !important;
     padding: 4 10 6 10;
@@ -159,12 +128,10 @@ body {
     transition: background-color 0.1s linear
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #fff;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -183,8 +150,6 @@ body {
 
 img {
     border-radius: 4px;
-    filter: grayscale(1) contrast(1.2);
-    transition: filter 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)
 }
 
 img:hover {
@@ -205,4 +170,32 @@ a:-webkit-any-link {
     color: #ffcc00;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.sticker-showcase img{
+	filter: none !important;
+	max-width: 160px
+}
+
+.sticker-showcase {
+    text-align: center;
+}
+
+.columns {
+	display: flex;
+	text-align: center;
+	font-size: 24px;
+	animation: 5s spark infinite linear;
+}
+
+@keyframes spark {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #fc0;
+    }
+    100% {
+        color: #fff;
+    }
 }
