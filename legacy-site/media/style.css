@@ -1,0 +1,211 @@
+html {
+    font-family: Din Pro, Arial, sans-serif;
+    font-size: 14px;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+	background-color: #030303;
+    background-image: linear-gradient(180deg, #404040 50%, #030303 50%);
+    color: white;
+	flex-direction: column
+}
+
+.stripes-bg {
+    position: fixed;
+    background: url('../media/bg.png') repeat-x ;
+    animation: 60s scroll infinite linear;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+@keyframes scroll {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 2000px;
+    }
+}
+
+.fg-box {
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.60);
+    padding: 12px;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
+}
+
+.fg-inside {
+    display: flex;
+}
+
+.side-image {
+    max-width: 95%;
+    justify-self: center;
+    margin: 4px
+}
+
+.banner-img {
+    max-height: 80px;
+}
+
+.sidebar {
+    text-align: center;
+}
+
+.notsidebar {
+}
+
+.insidebanner {
+    max-height: 150px;
+    justify-content: space-between;
+    display: flex;
+    width: -webkit-fill-available;
+    margin: 8;
+}
+
+.text-inside {
+}
+
+.titletext {
+    font-family: Din Pro, Arial;
+    font-weight: 900;
+    font-size: 42px;
+    padding-left: 58px;
+}
+
+.header-menu-text {
+    padding: 4 10 6 10;
+    background: #fc0;
+    text-decoration: none !important;
+    color: black !important;
+    border-radius: 4px;
+    transition: background 0.1s linear;
+}
+
+.header-menu-text:hover {
+    background: #fff !important;
+}
+
+@media screen and (min-width: 800px) {
+    ._1{flex: 1;}
+    ._2{flex: 2;}
+    ._3{flex: 3;}
+    ._4{flex: 4;}
+    ._5{flex: 5;}
+    ._6{flex: 6;}
+    ._7{flex: 7;}
+    ._8{flex: 8;}
+    ._9{flex: 9;}
+    ._10{flex: 10;}
+}
+
+.dropdown {
+    position: relative;
+    display: inherit;
+    z-index: 2;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-image: linear-gradient(#fc0, #da0);
+    min-width: max-content;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    top: 28px;
+}
+
+.dropdown-content a {
+    color: black !important;
+    padding: 4 10 6 10;
+    text-decoration: none !important;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.1s linear
+}
+
+.dropdown-content a:hover {
+    background-color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.bottom-header {
+    justify-content: space-between;
+    display: flex;
+}
+
+.logoicon {
+    background-image: url(../media/logo.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: bottom left;
+}
+
+img {
+    border-radius: 4px;
+}
+
+img:hover {
+    filter: none;
+    transition: filter 0.2s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+.unused {
+    background: #666;
+    cursor: default;
+}
+
+.unused:hover {
+    background: #666 !important;
+}
+
+a:-webkit-any-link {
+    color: #ffcc00;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sticker-showcase img{
+	filter: none !important;
+	max-width: 160px
+}
+
+.sticker-showcase {
+    text-align: center;
+}
+
+.columns {
+	display: flex;
+	text-align: center;
+	font-size: 24px;
+	animation: 5s spark infinite linear;
+}
+
+@keyframes spark {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #fc0;
+    }
+    100% {
+        color: #fff;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+	.fg-inside {
+		display: inline-flex;
+		flex-direction: column-reverse;
+	}
+}
