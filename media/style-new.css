@@ -190,6 +190,7 @@ header {
 .content-holder {
     max-height: 320px;
     min-height: 320px;
+	min-width: -webkit-fill-available;
     background: white;
     flex-direction: column;
     height: auto;
@@ -200,6 +201,7 @@ header {
 .content-text {
 	text-align: justify;
 	text-align-last: center;
+	flex: 10;
 }
 
 .content-image {
@@ -215,6 +217,7 @@ header {
 
 .double {
 	grid-column: auto / span 2;
+/*     min-width: 710px; */
 }
 
 .text-on-the-right {
