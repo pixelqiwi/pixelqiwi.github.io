@@ -7,22 +7,31 @@
 
 :root {
 	--f1: "Manrope"; 	/* основной шрифт */
-	--c1: #00ccff; 		/*основной оттенок*/
-	--c2: #8eb3c3;
-	--c3: #44525f;
-	--c4: #141a26;
-	--c5: #fff;
-	--c6: #000;
+	
+	--c1: #e1edf8; 		/*белый*/
+	--c2: #6da7df;
+	--c3: #286fb2;
+	--c4: #174067;		/*серый*/
+	--c5: #14395d;
+	--c6: #102b46;
+	--c7: #0c2135;		/*тёмно-серый*/
+	--c8: #0a1b2d;
+	--c9: #081623;
+	--c10: #040a0f;		/*черный*/
+	
+	--c11: #08abe7;		/*голубой*/
+	--c12: #068bc4;		/*тёмно голубой*/
+	--c13: #035182;		/*синий*/
 }
 
 ::selection {
-  background: var(--c1) !important;
+  background: var(--c11) !important;
 }
 ::-moz-selection {
-  background: var(--c1);
+  background: var(--c11);
 }
 :any-link {
-	color: var(--c1);
+	color: var(--c11);
 	text-decoration: none;
 }
 
@@ -35,9 +44,10 @@ p {
 }
 
 html {
-	background: var(--c4);
+	background: var(--c9);
 	font-family: var(--f1);
 	overflow-x: hidden;
+	color: var(--c8)
 }
 
 body {
@@ -75,7 +85,7 @@ header {
 .header-container {
     height: 32px;
     width: -webkit-fill-available;
-    background: var(--c3);
+    background: var(--c6);
     display: flex;
 	overflow: hidden;
 	font-weight: bold;
@@ -86,24 +96,23 @@ header {
 .header-logo{
 	width: 32px !important;
 	height: 32px !important;
-	background: var(--c1);
+	background: var(--c4);
 	max-width: 32px;
 }
 
 .header-middle{
-	color: var(--c5) !important;
 	font-size: 16px;
 	flex: 1;
 	padding: 0 8px;
 }
 
 .header-middle-text{
-	color: var(--c6);
+	color: var(--c9);
 	white-space: nowrap;
 }
 
 .header-middle-text-2{
-	color: var(--c5);
+	color: var(--c1);
 }
 
 .header-buttons{
@@ -117,11 +126,11 @@ header {
 }
 
 .header-singular-button:nth-child(even){
-	background: var(--c3);
+	background: var(--c6);
 }
 
 .header-singular-button:hover{
-	background: var(--c1);
+	background: var(--c11);
 	cursor: pointer;
 	width: 192px;
 }
@@ -208,14 +217,6 @@ header {
 	grid-column: auto / span 2;
 }
 
-.triple {
-	grid-column: auto / span 3;
-}
-
-.quadruple {
-	grid-column: auto / span 4;
-}
-
 .text-on-the-right {
 	flex-direction: row;
 	align-items: center;
@@ -243,13 +244,14 @@ header {
 
 .button-link {
 	padding: 5px 10px;
-	background: var(--c4);
+	background: var(--c6);
+	color: var(--c1);
 	transition: background 0.1s linear, color 0.1s linear ;
 }
 
 .button-link:hover {
-	background: var(--c1);
-	color: var(--c5);
+	background: var(--c11);
+	color: var(--c9);
 }
 
 
