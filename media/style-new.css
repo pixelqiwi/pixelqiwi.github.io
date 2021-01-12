@@ -198,8 +198,22 @@ header {
 	max-height: 320px;
 }
 
+
+.content-image-small {
+	max-width: 150px;
+	max-height: 150px;
+}
+
 .double {
 	grid-column: auto / span 2;
+}
+
+.triple {
+	grid-column: auto / span 3;
+}
+
+.quadruple {
+	grid-column: auto / span 4;
 }
 
 .text-on-the-right {
@@ -211,6 +225,13 @@ header {
 	width: 0px;
 	min-height: inherit;
 	margin: 0 10px;
+	background: #002b36;
+}
+
+.content-horizontal-divider {
+	width: 0px;
+	min-width: inherit;
+	margin: 10px 0;
 	background: #002b36;
 }
 
