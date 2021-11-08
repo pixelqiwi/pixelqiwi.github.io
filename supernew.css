@@ -5,6 +5,7 @@ html {
 	padding: 0;
 	margin: auto;
 	max-width: 1280px;
+	min-width: 1280px;
 	font-smooth: never;
 	background: url(https://nicolassassoon.com/IMAGES/LL_7.gif) center fixed;
 	/*background-color: #020f23;*/
@@ -109,7 +110,7 @@ h6 {
 
 .post {
 	min-height: 16px;
-	width: 100%;
+	flex: auto;
 	box-shadow: #020f23 8px 16px;
 	background: #152f56;
 }
