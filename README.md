@@ -3,4 +3,4 @@
 Hi. If you're seeing this then something went awfully wrong.
 - pixelqiwi
 
-http://pixelqiwi.ru/
+http://pixelqiwi.github.io/
