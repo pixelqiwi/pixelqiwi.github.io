@@ -5,8 +5,9 @@ html {
 	padding: 0;
 	margin: auto;
 	max-width: 1280px;
-	font-smooth: never;	
-	background: url(https://i.imgur.com/I3LPjvI.jpeg) no-repeat center fixed;;
+	font-smooth: never;
+	background: url(https://nicolassassoon.com/IMAGES/LL_7.gif) center fixed;
+	/*background-color: #020f23;*/
 	background-size: cover;
 }
 
@@ -15,16 +16,18 @@ body {
 }
 
 .header {
-	background-color: #00f;
+	background-color: #152f56;
 	display: flex;
 	margin-top: 16px;
-	box-shadow: black 8px 16px;
+	box-shadow: #020f23 8px 16px;
 	position: sticky;
 	top: -1;
 }
 
 .pixelqiwi {
-	margin-right: 8px;
+	margin: 0 8px;
+	align-items: center;
+	display: flex;
 }
 
 .pixelqiwitext {
@@ -32,25 +35,31 @@ body {
 }
 
 .pixelqiwitext:hover {
-	color: #ff0;
+	color: #fdba31;
 }
 
-.menugroup {}
+.menugroup {
+	display: contents
+}
 
 .menugroupitem {
-	color: black;
-	background-color: #088;
-/* 	transition: background 0.05s linear */
+	color: #fff;
+	background-color: #52709c;
+	padding: 8px;
+	/* 	transition: background 0.05s linear */
 }
 
 .menugroupitem:hover {
-	color: black;
-	background-color: #0ff;
+	color: #fff;
+	background-color: #758db0;
 }
 
-a:-webkit-any-link {
-	cursor: pointer;
+a:hover,
+a:visited,
+a:link,
+a:active {
 	text-decoration: none;
+	cursor: pointer;
 }
 
 @font-face {
@@ -72,7 +81,7 @@ a:-webkit-any-link {
 }
 
 .pot {
-	font-family: pot, monospace
+	font-family: pot, monospace;
 }
 
 .iconz {
@@ -91,23 +100,23 @@ h6 {
 
 .containerstack {
 	display: flex;
-	margin-top: 16px;
+	margin-top: 32px;
 }
 
 .postdivider {
-	min-width: 8px;
+	min-width: 16px;
 }
 
 .post {
 	min-height: 16px;
 	width: -webkit-fill-available;
-	box-shadow: black 8px 16px;
-	background: #088;
+	box-shadow: #020f23 8px 16px;
+	background: #152f56;
 }
 
 .posttitle {
-	background: #0ff;
-	color: #000;
+	background: #274c83;
+	color: #fff;
 	display: flex;
 }
 
@@ -123,7 +132,6 @@ h6 {
 	display: flex;
 	color: #fff;
 	padding: 16px 8px;
-	text-shadow: 2px 2px black
 }
 
 .postcontentleft {
@@ -147,7 +155,7 @@ h6 {
 }
 
 .footertext {
-	color: #088
+	color: #fff
 }
 
 .dropdown {
@@ -158,11 +166,13 @@ h6 {
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #088;
-	min-width: 128px;
-/* 	box-shadow: 1px 1px 0px 0px #0008; */
+	background-color: #0000;
+	min-width: 200px;
+	box-shadow: 8px 16px 0px 0px #020f23;
 	padding: 0;
 	z-index: 1;
+	left: 0;
+	top: 32px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -170,22 +180,24 @@ h6 {
 }
 
 .dropdownbutton {
-	display: flex
+	display: flex;
 }
 
 span {
 	cursor: default
 }
 
-body::-webkit-scrollbar {width: 10px !important;}
- 
-body::-webkit-scrollbar-track {
-    background: #088
+body::-webkit-scrollbar {
+	width: 10px !important;
 }
- 
+
+body::-webkit-scrollbar-track {
+	background: #088
+}
+
 body::-webkit-scrollbar-thumb {
-  background-color: #0ff !important;
-  outline: none !important;
+	background-color: #0ff !important;
+	outline: none !important;
 }
 
 .annoyingpopup {
@@ -205,29 +217,87 @@ body::-webkit-scrollbar-thumb {
 	animation: lmao 0.5s linear infinite
 }
 
+.acnh {
+	animation: acnh 0.5s linear infinite
+}
+
 @keyframes lmao {
-	0% 		{box-shadow: 	red 	8px 	16px;}
-	49.9% 	{box-shadow: 	red 	8px 	16px;}
-	50% 	{box-shadow: 	white 	8px 	16px;}
-	99.9% 	{box-shadow: 	white 	8px 	16px;}
-	100% 	{box-shadow: 	red 	8px 	16px;}
+	0% {
+		box-shadow: #fdba31 8px 16px;
+	}
+	49.9% {
+		box-shadow: #fdba31 8px 16px;
+	}
+	50% {
+		box-shadow: #020f23 8px 16px;
+	}
+	100% {
+		box-shadow: #020f23 8px 16px;
+	}
+}
+
+@keyframes acnh {
+	0% {
+		background-color: #8ae2af;
+		color: #406438
+	}
+	49.9% {
+		background-color: #8ae2af;
+		color: #406438
+	}
+	50% {
+		background-color: #6bdae1;
+		color: #364d3f
+	}
+	100% {
+		background-color: #6bdae1;
+		color: #364d3f
+	}
 }
 
 .textshadow {
 	text-shadow: 2px 2px black
 }
 
+
 /*флексы чтобы делать посты шире и уже соответственно*/
 
-.f1 {flex: 1}
+.f1 {
+	flex: 1
+}
 
-.f2 	{flex: 2}
-.f3 	{flex: 3}
-.f4 	{flex: 4}
-.f5 	{flex: 5}
-.f6 	{flex: 6}
-.f7 	{flex: 7}
-.f8 	{flex: 8}
-.f9 	{flex: 9}
-.f10 	{flex: 10}
+.f2 {
+	flex: 2
+}
 
+.f3 {
+	flex: 3
+}
+
+.f4 {
+	flex: 4
+}
+
+.f5 {
+	flex: 5
+}
+
+.f6 {
+	flex: 6
+}
+
+.f7 {
+	flex: 7
+}
+
+.f8 {
+	flex: 8
+}
+
+.f9 {
+	flex: 9
+}
+
+.f10 {
+	flex: 10
+}
