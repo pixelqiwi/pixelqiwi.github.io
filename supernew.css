@@ -109,7 +109,7 @@ h6 {
 
 .post {
 	min-height: 16px;
-	width: -webkit-fill-available;
+	width: 100%;
 	box-shadow: #020f23 8px 16px;
 	background: #152f56;
 }
