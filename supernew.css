@@ -1,0 +1,233 @@
+html {
+	font-family: "fsex";
+	font-size: 16px !important;
+	line-height: 16px !important;
+	padding: 0;
+	margin: auto;
+	max-width: 1280px;
+	font-smooth: never;	
+	background: url(https://i.imgur.com/I3LPjvI.jpeg) no-repeat center fixed;;
+	background-size: cover;
+}
+
+body {
+	margin: 0;
+}
+
+.header {
+	background-color: #00f;
+	display: flex;
+	margin-top: 16px;
+	box-shadow: black 8px 16px;
+	position: sticky;
+	top: -1;
+}
+
+.pixelqiwi {
+	margin-right: 8px;
+}
+
+.pixelqiwitext {
+	color: #fff;
+}
+
+.pixelqiwitext:hover {
+	color: #ff0;
+}
+
+.menugroup {}
+
+.menugroupitem {
+	color: black;
+	background-color: #088;
+/* 	transition: background 0.05s linear */
+}
+
+.menugroupitem:hover {
+	color: black;
+	background-color: #0ff;
+}
+
+a:-webkit-any-link {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: pot;
+	src: url(https://pixelqiwi.github.io/media/P0T-NOoDLE_v1.0.ttf) format('truetype');
+	font-style: normal
+}
+
+@font-face {
+	font-family: pxiconz;
+	src: url(https://pixelqiwi.github.io/media/px_icons.ttf) format('truetype');
+	font-style: normal
+}
+
+@font-face {
+	font-family: fsex;
+	src: url(https://pixelqiwi.github.io/media/FSEX300.TTF) format('truetype');
+	font-style: normal
+}
+
+.pot {
+	font-family: pot, monospace
+}
+
+.iconz {
+	font-family: pxiconz;
+	font-size: 8px;
+}
+
+h6 {
+	display: inherit;
+	margin-block-start: inherit;
+	margin-block-end: inherit;
+	margin-inline-start: inherit;
+	margin-inline-end: inherit;
+	font-weight: inherit;
+}
+
+.containerstack {
+	display: flex;
+	margin-top: 16px;
+}
+
+.postdivider {
+	min-width: 8px;
+}
+
+.post {
+	min-height: 16px;
+	width: -webkit-fill-available;
+	box-shadow: black 8px 16px;
+	background: #088;
+}
+
+.posttitle {
+	background: #0ff;
+	color: #000;
+	display: flex;
+}
+
+.posttitleleft {
+	flex: 1
+}
+
+.posttitleright {
+	text-align: right
+}
+
+.postcontent {
+	display: flex;
+	color: #fff;
+	padding: 16px 8px;
+	text-shadow: 2px 2px black
+}
+
+.postcontentleft {
+	margin-right: 4px;
+}
+
+.postcontentright {
+	margin-left: 4px;
+}
+
+.postcontentcenter {
+	margin: auto
+}
+
+.postimage {
+	max-width: 256px
+}
+
+.footer {
+	margin-top: 16px;
+}
+
+.footertext {
+	color: #088
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #088;
+	min-width: 128px;
+/* 	box-shadow: 1px 1px 0px 0px #0008; */
+	padding: 0;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdownbutton {
+	display: flex
+}
+
+span {
+	cursor: default
+}
+
+body::-webkit-scrollbar {width: 10px !important;}
+ 
+body::-webkit-scrollbar-track {
+    background: #088
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #0ff !important;
+  outline: none !important;
+}
+
+.annoyingpopup {
+	position: fixed;
+	max-width: 768px;
+	background: yellow;
+	z-index: 2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 16px 8px;
+	box-shadow: black 8px 16px;
+	text-align: center
+}
+
+.lmao {
+	animation: lmao 0.5s linear infinite
+}
+
+@keyframes lmao {
+	0% 		{box-shadow: 	red 	8px 	16px;}
+	49.9% 	{box-shadow: 	red 	8px 	16px;}
+	50% 	{box-shadow: 	white 	8px 	16px;}
+	99.9% 	{box-shadow: 	white 	8px 	16px;}
+	100% 	{box-shadow: 	red 	8px 	16px;}
+}
+
+.textshadow {
+	text-shadow: 2px 2px black
+}
+
+/*флексы чтобы делать посты шире и уже соответственно*/
+
+.f1 {flex: 1}
+
+.f2 	{flex: 2}
+.f3 	{flex: 3}
+.f4 	{flex: 4}
+.f5 	{flex: 5}
+.f6 	{flex: 6}
+.f7 	{flex: 7}
+.f8 	{flex: 8}
+.f9 	{flex: 9}
+.f10 	{flex: 10}
+
