@@ -7,9 +7,9 @@ html {
 	max-width: 1280px;
 	min-width: 1280px;
 	font-smooth: never;
-	background: url(https://nicolassassoon.com/IMAGES/LL_7.gif) center fixed;
-	/*background-color: #020f23;*/
-	background-size: cover;
+	/*background: url(https://nicolassassoon.com/IMAGES/LL_7.gif) center fixed;*/
+	background: url(https://static1.e621.net/data/mascot_bg/esix2.jpg) no-repeat center fixed;
+	background-color: #002e57;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 }
 
 .header {
-	background-color: #152f56;
+	background-color: #00244a;
 	display: flex;
 	margin-top: 16px;
 	box-shadow: #020f23 8px 16px;
@@ -36,7 +36,7 @@ body {
 }
 
 .pixelqiwitext:hover {
-	color: #fdba31;
+	color: #fcb328;
 }
 
 .menugroup {
@@ -45,14 +45,13 @@ body {
 
 .menugroupitem {
 	color: #fff;
-	background-color: #52709c;
 	padding: 8px;
 	/* 	transition: background 0.05s linear */
 }
 
 .menugroupitem:hover {
-	color: #fff;
-	background-color: #758db0;
+	color: #000;
+	background-color: #fcb328;
 }
 
 a:hover,
@@ -111,12 +110,12 @@ h6 {
 .post {
 	min-height: 16px;
 	flex: auto;
-	box-shadow: #020f23 8px 16px;
-	background: #152f56;
+	box-shadow: #020f23ee 8px 16px;
+	background: #00244aee;
 }
 
 .posttitle {
-	background: #274c83;
+	background: #274c83ee;
 	color: #fff;
 	display: flex;
 }
@@ -148,7 +147,7 @@ h6 {
 }
 
 .postimage {
-	max-width: 256px
+	max-width: 400px
 }
 
 .footer {
@@ -168,16 +167,17 @@ h6 {
 	display: none;
 	position: absolute;
 	background-color: #0000;
-	min-width: 200px;
+	min-width: max-content;
 	box-shadow: 8px 16px 0px 0px #020f23;
 	padding: 0;
 	z-index: 1;
 	left: 0;
-	top: 32px;
+	top: 0px;
+	background-color: #52709c;
 }
 
 .dropdown:hover .dropdown-content {
-	display: block;
+	display: flex;
 }
 
 .dropdownbutton {
@@ -214,11 +214,19 @@ body::-webkit-scrollbar-thumb {
 	text-align: center
 }
 
+.alt {
+	background-color: #24497f80
+}
+
 .lmao {
 	animation: lmao 0.5s linear infinite
 }
 
 .acnh {
+	animation: acnh 0.5s linear infinite
+}
+
+.acnh:hover {
 	animation: acnh 0.5s linear infinite
 }
 
@@ -239,25 +247,32 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes acnh {
 	0% {
-		background-color: #8ae2af;
-		color: #406438
+		background-color: #8ea;
+		color: #173
 	}
 	49.9% {
-		background-color: #8ae2af;
-		color: #406438
+		background-color: #8ea;
+		color: #173
 	}
 	50% {
-		background-color: #6bdae1;
-		color: #364d3f
+		background-color: #7de;
+		color: #067
 	}
 	100% {
-		background-color: #6bdae1;
-		color: #364d3f
+		background-color: #7de;
+		color: #067
 	}
 }
 
 .textshadow {
 	text-shadow: 2px 2px black
+}
+
+iframe {
+    border-width: 0;
+    border-style: none;
+    border-color: none;
+    border-image: none;
 }
 
 
