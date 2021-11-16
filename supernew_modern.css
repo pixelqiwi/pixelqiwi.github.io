@@ -1,16 +1,21 @@
+:root {
+	--baseshadow: #111a 0px 6px 12px;
+}
+
 html {
-	font-family: "fsex";
-	font-size: 16px !important;
-	line-height: 16px !important;
+	font-family: "Roboto Regular";
+	font-size: 15px !important;
+	line-height: 20px !important;
 	padding: 0;
 	margin: auto;
 	max-width: 1200px;
 	min-width: 1200px;
 	font-smooth: never;
 	background: url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-				url(https://static1.e621.net/data/mascot_bg/esix2.jpg) no-repeat center fixed;
+				url(/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
 	/*background: url(https://static1.e621.net/data/mascot_bg/esix2.jpg) no-repeat center fixed;*/
-	background-color: #002e57;
+	background-color: #814692;
+	background-blend-mode: screen;
 }
 
 body {
@@ -18,26 +23,34 @@ body {
 }
 
 .header {
-	background-color: #00244a;
+	background-color: #4f2a56;
 	display: flex;
 	margin-top: 16px;
-	box-shadow: #020f23 8px 16px;
 	position: sticky;
 	top: -1;
+	border-radius: 4px;
+	box-shadow: var(--baseshadow);
+	z-index: 3
 }
 
 .pixelqiwi {
 	margin: 0 8px;
-	align-items: center;
+/* 	align-items: center; */
 	display: flex;
 }
 
 .pixelqiwitext {
-	color: #fff;
+    color: #fff0;
+    background-image: url(/media/logo_black.png);
+    background-size: 76px;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 90px;
+	font-size: 0
 }
 
 .pixelqiwitext:hover {
-	color: #fcb328;
+	background-image: url(/media/logo_purpur.png)
 }
 
 .menugroup {
@@ -47,12 +60,14 @@ body {
 .menugroupitem {
 	color: #fff;
 	padding: 8px;
-	/* 	transition: background 0.05s linear */
+	border-radius: 4px;
+	transition: background 0.05s linear
 }
 
 .menugroupitem:hover {
-	color: #000;
-	background-color: #fcb328;
+	color: #090618;
+	background-color: #d3a6df;
+	border-radius: 4px;
 }
 
 a:hover,
@@ -100,7 +115,7 @@ h6 {
 
 .containerstack {
 	display: flex;
-	margin-top: 32px;
+	margin-top: 16px;
 }
 
 .postdivider {
@@ -110,14 +125,17 @@ h6 {
 .post {
 	min-height: 16px;
 	flex: auto;
-	box-shadow: #020f23ee 8px 16px;
-	background: #00244aee;
+	background: #4f2a56dd;
+	border-radius: 8px 8px 4px 4px;
+	box-shadow: var(--baseshadow);
 }
 
 .posttitle {
-	background: #274c83ee;
+	background: linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);;
 	color: #fff;
 	display: flex;
+	border-radius: 4px 4px 0 0;
+	padding: 6px 12px;
 }
 
 .posttitleleft {
@@ -131,7 +149,7 @@ h6 {
 .postcontent {
 	display: flex;
 	color: #fff;
-	padding: 16px 8px;
+	padding: 12px;
 }
 
 .postcontentleft {
@@ -147,11 +165,12 @@ h6 {
 }
 
 .postimage {
-	max-width: 400px;
+	max-height: 300px;
+	max-width: 300px;
 }
 
 .footer {
-	margin-top: 16px;
+	margin: 16px;
 }
 
 .footertext {
@@ -167,18 +186,19 @@ h6 {
 	display: none;
 	position: absolute;
 	background-color: #0000;
-	min-width: max-content;
-	box-shadow: 8px 16px 0px 0px #020f23;
+	min-width: 150px;
 	padding: 0;
 	z-index: 1;
 	left: 0;
 	top: 0px;
-	background-color: #52709c;
+	background-color: #673872;
+	border-radius: 0 0 4px 4px;
+	box-shadow: var(--baseshadow);
 }
 
 .dropdown:hover .dropdown-content {
 	display: block;
-	top: 32px;
+	top: 36px;
 }
 
 .dropdownbutton {
@@ -205,18 +225,21 @@ body::-webkit-scrollbar-thumb {
 .annoyingpopup {
 	position: fixed;
 	max-width: 768px;
-	background: yellow;
+	background: #eaa97c;
+	color: 090618;
 	z-index: 2;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	padding: 16px 8px;
-	box-shadow: black 8px 16px;
 	text-align: center;
+	border-radius: 4px;
+	box-shadow: var(--baseshadow);
 }
 
 .alt {
-	background-color: #24497f80;
+	background-color: #80458D80;
+	border-radius: 0
 }
 
 .lmao {
@@ -224,11 +247,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .acnh {
-	animation: acnh 0.5s linear infinite;
+	animation: acnh 0.1s linear infinite;
+	font-size: 16px;
 }
 
 .acnh:hover {
-	animation: acnh 0.5s linear infinite;
+	filter: brightness(150%);
 }
 
 @keyframes lmao {
@@ -249,24 +273,20 @@ body::-webkit-scrollbar-thumb {
 @keyframes acnh {
 	0% {
 		background-color: #8ea;
-		color: #173;
 	}
 	49.9% {
 		background-color: #8ea;
-		color: #173;
 	}
 	50% {
 		background-color: #7de;
-		color: #067;
 	}
 	100% {
 		background-color: #7de;
-		color: #067;
 	}
 }
 
 .textshadow {
-	text-shadow: 2px 2px black;
+	text-shadow: 1px 2px 2px black;
 }
 
 iframe {
@@ -274,6 +294,18 @@ iframe {
 	border-style: none;
 	border-color: none;
 	border-image: none;
+}
+
+img {
+	border-radius: 4px
+}
+
+.fullwidthaudio {
+	width: 100%
+}
+
+.coolshit {
+	mix-blend-mode: screen;
 }
 
 /*флексы чтобы делать посты шире и уже соответственно*/
