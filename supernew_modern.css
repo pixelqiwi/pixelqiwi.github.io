@@ -3,12 +3,12 @@
 	--html-font:			"Roboto Regular";
 	--html-font-size: 		15px !important;
 	--html-line-height:		20px !important;
-	--html-bg: 				#88eeaa;
+	--html-bg: 				#7b4688;
 	--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
 							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
 	--navbar-bg: 			#4f2a56;
 	--navbar-alt:			#80458D80;
-	--post-header:			;
+	--post-title:			linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);
 	--post-bg: 				#4f2a56dd;
 	--pixelqiwi-text-col: 	#000f;
 }
@@ -63,7 +63,11 @@ body	{
 }
 
 .pixelqiwitext:hover	{
-	background-image: 		url(/media/logo_purpur.png)
+	filter:					contrast(75%) brightness(125%) 
+}
+
+.pixelqiwitext:active	{
+	filter:					contrast(75%) brightness(75%) 
 }
 
 .menugroup	{
@@ -79,8 +83,9 @@ body	{
 
 .menugroupitem:hover	{
 	color: 					#090618;
-	background-color: 		#d3a6df;
+	background-color:		var(--navbar-alt);
 	border-radius: 			4px;
+	filter:					contrast(100%) brightness(125%);
 }
 
 a:hover, a:visited, 
@@ -110,11 +115,6 @@ a:link, a:active	{
 	font-family: 			pot, monospace;
 }
 
-.iconz	{
-	font-family: 			iconz;
-	font-size: 				8px;
-}
-
 h6	{
 	display: inherit;
 	margin-block-start: 	inherit;
@@ -122,6 +122,15 @@ h6	{
 	margin-inline-start: 	inherit;
 	margin-inline-end: 		inherit;
 	font-weight: 			inherit;
+}
+
+.iconz	{
+	font-family: 			iconz;
+	font-size: 				14px;
+}
+
+.icondivider	{
+	margin:					0 2px;
 }
 
 .containerstack	{
@@ -142,11 +151,17 @@ h6	{
 }
 
 .posttitle	{
-	background: 			linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);;
+	background: 			var(--post-title);
 	color: 					#fff;
 	display: 				flex;
 	border-radius: 			4px 4px 0 0;
-	padding: 				6px 12px;
+	padding: 				0px 12px;
+    min-height: 			32px;
+    align-items: 			center;
+}
+
+.posttitletext	{
+	margin-left:			20px;
 }
 
 .posttitleleft	{
@@ -199,17 +214,17 @@ h6	{
 	background-color: 		#0000;
 	min-width: 				150px;
 	padding: 				0;
-	z-index: 				1;
+	z-index: 				5;
 	left: 					0;
 	top: 					0px;
-	background-color: 		#673872;
+	background-color: 		var(--navbar-bg);
 	border-radius: 			0 0 4px 4px;
 	box-shadow: 			var(--shadow);
 }
 
 .dropdown:hover .dropdown-content	{
 	display: 				block;
-	top: 					6px;
+	top: 					38px;
 }
 
 .dropdownbutton	{
@@ -218,6 +233,7 @@ h6	{
 
 span	{
 	cursor: 				default;
+	display: 				inline-flex;
 }
 
 body::-webkit-scrollbar	{

@@ -1,7 +1,13 @@
-:root {
-	--baseshadow: #111a 0px 6px 12px;
-	--post-bg: #4f2a56dd;
-	--html-bg: #88eeaa;
-	--html-bg-img:	url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-					url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
+:root	{
+	--shadow: 				#111a 0px 6px 12px;
+	--html-font:			"Roboto Regular";
+	--html-font-size: 		15px !important;
+	--html-line-height:		20px !important;
+	--html-bg: 				#66AAAA;
+	--html-bg-img:			url(https://media.discordapp.net/attachments/690050055901675552/910505649790652436/ezgif-3-f396e361e188.gif) center fixed;
+	--navbar-bg: 			#66aaaa;
+	--navbar-alt:			#88eeaa80;
+	--post-title:			linear-gradient(180deg, #88eeaa 0%, #88eeaa40 100%);
+	--post-bg: 				#114466dd;
+	--pixelqiwi-text-col: 	#0000;
 }
