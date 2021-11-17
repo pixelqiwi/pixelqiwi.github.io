@@ -82,7 +82,7 @@ body	{
 }
 
 .menugroupitem:hover	{
-	color: 					#090618;
+	color: 					var(--post-bg);
 	background-color:		var(--navbar-alt);
 	border-radius: 			4px;
 	filter:					contrast(100%) brightness(125%);
