@@ -1,351 +1,357 @@
-:root {
-	--baseshadow: #111a 0px 6px 12px;
+:root	{
+	--shadow: 				#111a 0px 6px 12px;
+	--html-font:			"Roboto Regular";
+	--html-font-size: 		15px !important;
+	--html-line-height:		20px !important;
+	--html-bg: 				#88eeaa;
+	--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
+							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
+	--navbar-bg: 			#4f2a56;
+	--navbar-alt:			#80458D80;
+	--post-header:			;
+	--post-bg: 				#4f2a56dd;
+	--pixelqiwi-text-col: 	#000f;
 }
 
-html {
-	font-family: "Roboto Regular";
-	font-size: 15px !important;
-	line-height: 20px !important;
-	padding: 0;
-	margin: auto;
-	max-width: 1200px;
-	min-width: 1200px;
-	font-smooth: never;
-	background: url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-				url(/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
-	/*background: url(https://static1.e621.net/data/mascot_bg/esix2.jpg) no-repeat center fixed;*/
-	background-color: #814692;
-	background-blend-mode: screen;
+html	{
+	font-family: 			var(--html-font);
+	font-size: 				var(--html-font-size);
+	line-height: 			var(--html-line-height);
+	padding: 				0;
+	margin: 				auto;
+	max-width: 				1200px;
+	min-width: 				1200px;
+	font-smooth: 			never;
+	background: 			var(--html-bg-img);
+	background-color: 		var(--html-bg);
+	background-blend-mode: 	screen;
 }
 
-body {
+body	{
 	margin: 0;
 }
 
-.header {
-	background-color: #4f2a56;
-	display: flex;
-	margin-top: 16px;
-	position: sticky;
-	top: -1;
-	border-radius: 4px;
-	box-shadow: var(--baseshadow);
-	z-index: 3
+.header	{
+	background-color: 		var(--navbar-bg);
+	display: 				flex;
+	margin-top: 			16px;
+	position: 				sticky;
+	top: 					-1;
+	border-radius: 			4px;
+	box-shadow: 			var(--shadow);
+	z-index: 				3
 }
 
-.pixelqiwi {
-	margin: 0 8px;
-/* 	align-items: center; */
-	display: flex;
+.alt	{
+	background-color: 		var(--navbar-alt);
+	border-radius: 			0
 }
 
-.pixelqiwitext {
-    color: #fff0;
-    background-image: url(/media/logo_black.png);
-    background-size: 76px;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-width: 90px;
-	font-size: 0
+.pixelqiwi	{
+	margin: 				0 8px;
+	display: 				flex;
 }
 
-.pixelqiwitext:hover {
-	background-image: url(/media/logo_purpur.png)
+.pixelqiwitext	{
+	color: 					var(--pixelqiwi-text-col);
+	background-image: 		url(/media/logo_black.png);
+	background-size: 		76px;
+	background-position: 	center;
+	background-repeat: 		no-repeat;
+	min-width: 				90px;
+	font-size: 				0
 }
 
-.menugroup {
-	display: contents;
+.pixelqiwitext:hover	{
+	background-image: 		url(/media/logo_purpur.png)
 }
 
-.menugroupitem {
-	color: #fff;
-	padding: 8px;
-	border-radius: 4px;
-	transition: background 0.05s linear
+.menugroup	{
+	display: 				contents;
 }
 
-.menugroupitem:hover {
-	color: #090618;
-	background-color: #d3a6df;
-	border-radius: 4px;
+.menugroupitem	{
+	color: 					#fff;
+	padding: 				8px;
+	border-radius: 			4px;
+	transition: 			background 0.05s linear
 }
 
-a:hover,
-a:visited,
-a:link,
-a:active {
-	text-decoration: none;
+.menugroupitem:hover	{
+	color: 					#090618;
+	background-color: 		#d3a6df;
+	border-radius: 			4px;
 }
 
-@font-face {
-	font-family: pot;
-	src: url(https://pixelqiwi.github.io/media/P0T-NOoDLE_v1.0.ttf) format("truetype");
-	font-style: normal;
+a:hover, a:visited, 
+a:link, a:active	{
+	text-decoration: 		none;
 }
 
-@font-face {
-	font-family: pxiconz;
-	src: url(https://pixelqiwi.github.io/media/px_icons.ttf) format("truetype");
-	font-style: normal;
+@font-face	{
+	font-family: 			pot;
+	src: 					url(https://pixelqiwi.github.io/media/P0T-NOoDLE_v1.0.ttf) format("truetype");
+	font-style: 			normal;
 }
 
-@font-face {
-	font-family: fsex;
-	src: url(https://pixelqiwi.github.io/media/FSEX300.TTF) format("truetype");
-	font-style: normal;
+@font-face	{
+	font-family: 			iconz;
+	src: 					url(https://pixelqiwi.github.io/media/webhostinghub-glyphs.ttf) format("truetype");
+	font-style: 			normal;
 }
 
-.pot {
-	font-family: pot, monospace;
+@font-face	{
+	font-family: 			fsex;
+	src: 					url(https://pixelqiwi.github.io/media/FSEX300.TTF) format("truetype");
+	font-style: 			normal;
 }
 
-.iconz {
-	font-family: pxiconz;
-	font-size: 8px;
+.pot	{
+	font-family: 			pot, monospace;
 }
 
-h6 {
+.iconz	{
+	font-family: 			iconz;
+	font-size: 				8px;
+}
+
+h6	{
 	display: inherit;
-	margin-block-start: inherit;
-	margin-block-end: inherit;
-	margin-inline-start: inherit;
-	margin-inline-end: inherit;
-	font-weight: inherit;
+	margin-block-start: 	inherit;
+	margin-block-end: 		inherit;
+	margin-inline-start: 	inherit;
+	margin-inline-end: 		inherit;
+	font-weight: 			inherit;
 }
 
-.containerstack {
-	display: flex;
-	margin-top: 16px;
+.containerstack	{
+	display: 				flex;
+	margin-top: 			16px;
 }
 
-.postdivider {
-	min-width: 16px;
+.postdivider	{
+	min-width: 				16px;
 }
 
-.post {
-	min-height: 16px;
-	flex: auto;
-	background: #4f2a56dd;
-	border-radius: 8px 8px 4px 4px;
-	box-shadow: var(--baseshadow);
+.post	{
+	min-height: 			16px;
+	flex: 					auto;
+	background: 			var(--post-bg);
+	border-radius: 			8px 8px 4px 4px;
+	box-shadow: 			var(--shadow);
 }
 
-.posttitle {
-	background: linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);;
-	color: #fff;
-	display: flex;
-	border-radius: 4px 4px 0 0;
-	padding: 6px 12px;
+.posttitle	{
+	background: 			linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);;
+	color: 					#fff;
+	display: 				flex;
+	border-radius: 			4px 4px 0 0;
+	padding: 				6px 12px;
 }
 
-.posttitleleft {
-	flex: 1;
+.posttitleleft	{
+	flex: 					1;
 }
 
-.posttitleright {
-	text-align: right;
+.posttitleright	{
+	text-align: 			right;
 }
 
-.postcontent {
-	display: flex;
-	color: #fff;
-	padding: 12px;
+.postcontent	{
+	display: 				flex;
+	color: 					#fff;
+	padding: 				12px;
 }
 
-.postcontentleft {
-	margin-right: 4px;
+.postcontentleft	{
+	margin-right: 			4px;
 }
 
-.postcontentright {
-	margin-left: 4px;
+.postcontentright	{
+	margin-left: 			4px;
 }
 
-.postcontentcenter {
-	margin: auto;
+.postcontentcenter	{
+	margin: 				auto;
 }
 
-.postimage {
-	max-height: 300px;
-	max-width: 300px;
+.postimage	{
+	max-height: 			300px;
+	max-width: 				300px;
 }
 
-.footer {
-	margin: 16px;
+.footer	{
+	margin: 				16px;
 }
 
-.footertext {
-	color: #fff;
+.footertext	{
+	color: 					#fff;
 }
 
-.dropdown {
-	position: relative;
-	display: inline-block;
+.dropdown	{
+	position: 				relative;
+	display: 				inline-block;
 }
 
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #0000;
-	min-width: 150px;
-	padding: 0;
-	z-index: 1;
-	left: 0;
-	top: 0px;
-	background-color: #673872;
-	border-radius: 0 0 4px 4px;
-	box-shadow: var(--baseshadow);
+.dropdown-content	{
+	display: 				none;
+	position: 				absolute;
+	background-color: 		#0000;
+	min-width: 				150px;
+	padding: 				0;
+	z-index: 				1;
+	left: 					0;
+	top: 					0px;
+	background-color: 		#673872;
+	border-radius: 			0 0 4px 4px;
+	box-shadow: 			var(--shadow);
 }
 
-.dropdown:hover .dropdown-content {
-	display: block;
-	top: 36px;
+.dropdown:hover .dropdown-content	{
+	display: 				block;
+	top: 					6px;
 }
 
-.dropdownbutton {
-	display: flex;
+.dropdownbutton	{
+	display: 				flex;
 }
 
-span {
-	cursor: default;
+span	{
+	cursor: 				default;
 }
 
-body::-webkit-scrollbar {
-	width: 10px !important;
+body::-webkit-scrollbar	{
+	width: 					10px !important;
 }
 
-body::-webkit-scrollbar-track {
-	background: #088;
+body::-webkit-scrollbar-track	{
+	background: 			#088;
 }
 
-body::-webkit-scrollbar-thumb {
-	background-color: #0ff !important;
-	outline: none !important;
+body::-webkit-scrollbar-thumb	{
+	background-color: 		#0ff !important;
+	outline: 				none !important;
 }
 
-.annoyingpopup {
-	position: fixed;
-	max-width: 768px;
-	background: #eaa97c;
-	color: 090618;
-	z-index: 2;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	padding: 16px 8px;
-	text-align: center;
-	border-radius: 4px;
-	box-shadow: var(--baseshadow);
+.annoyingpopup	{
+	position: 				fixed;
+	max-width: 				768px;
+	background: 			#eaa97c;
+	color: 					090618;
+	z-index: 				2;
+	left: 					50%;
+	top: 					50%;
+	transform: 				translate(-50%, -50%);
+	padding: 				16px 8px;
+	text-align: 			center;
+	border-radius: 			4px;
+	box-shadow: 			var(--shadow);
 }
 
-.alt {
-	background-color: #80458D80;
-	border-radius: 0
+.lmao	{
+	animation: 				lmao 0.5s linear infinite;
 }
 
-.lmao {
-	animation: lmao 0.5s linear infinite;
+.acnh	{
+	animation: 				acnh 0.1s linear infinite;
+	font-size: 				16px;
 }
 
-.acnh {
-	animation: acnh 0.1s linear infinite;
-	font-size: 16px;
+.acnh:hover	{
+	filter: 				brightness(150%);
 }
 
-.acnh:hover {
-	filter: brightness(150%);
-}
-
-@keyframes lmao {
-	0% {
-		box-shadow: #fdba31 8px 16px;
+@keyframes lmao	{
+	0%	{
+		box-shadow: 		#fdba31 8px 16px;
 	}
-	49.9% {
-		box-shadow: #fdba31 8px 16px;
+	49.9%	{
+		box-shadow: 		#fdba31 8px 16px;
 	}
-	50% {
-		box-shadow: #020f23 8px 16px;
+	50%	{
+		box-shadow: 		#020f23 8px 16px;
 	}
-	100% {
-		box-shadow: #020f23 8px 16px;
+	100%	{
+		box-shadow: 		#020f23 8px 16px;
 	}
 }
 
-@keyframes acnh {
-	0% {
-		background-color: #8ea;
+@keyframes acnh	{
+	0%	{
+		background-color: 	#8ea;
 	}
-	49.9% {
-		background-color: #8ea;
+	49.9%	{
+		background-color: 	#8ea;
 	}
-	50% {
-		background-color: #7de;
+	50%	{
+		background-color: 	#7de;
 	}
-	100% {
-		background-color: #7de;
+	100%	{
+		background-color: 	#7de;
 	}
 }
 
-.textshadow {
-	text-shadow: 1px 2px 2px black;
+.textshadow	{
+	text-shadow: 			1px 2px 2px black;
 }
 
-iframe {
-	border-width: 0;
-	border-style: none;
-	border-color: none;
-	border-image: none;
+iframe	{
+	border-width: 			0;
+	border-style: 			none;
+	border-color: 			none;
+	border-image: 			none;
 }
 
-img {
-	border-radius: 4px
+img	{
+	border-radius: 			4px
 }
 
-.fullwidthaudio {
-	width: 100%
+.fullwidthaudio	{
+	width: 					100%
 }
 
-.coolshit {
-	mix-blend-mode: screen;
+.coolshit	{
+	mix-blend-mode: 		screen;
 }
 
-/*флексы чтобы делать посты шире и уже соответственно*/
+/* флексы чтобы делать посты шире-уже */
 
-.f1 {
-	flex: 1;
-}
+.f1	{
+	flex: 					1;
+}					
 
-.f2 {
-	flex: 2;
-}
+.f2	{					
+	flex: 					2;
+}					
 
-.f3 {
-	flex: 3;
-}
+.f3	{					
+	flex: 					3;
+}					
 
-.f4 {
-	flex: 4;
-}
+.f4	{					
+	flex: 					4;
+}					
 
-.f5 {
-	flex: 5;
-}
+.f5	{					
+	flex: 					5;
+}					
 
-.f6 {
-	flex: 6;
-}
+.f6	{					
+	flex: 					6;
+}					
 
-.f7 {
-	flex: 7;
-}
+.f7	{					
+	flex: 					7;
+}					
 
-.f8 {
-	flex: 8;
-}
+.f8	{					
+	flex: 					8;
+}					
 
-.f9 {
-	flex: 9;
-}
+.f9	{					
+	flex: 					9;
+}					
 
-.f10 {
-	flex: 10;
+.f10	{					
+	flex: 					10;
 }
