@@ -12,13 +12,13 @@
 	--post-bg: 				#4f2a56dd;
 	--pixelqiwi-text-col: 	#000f;
 	--border-radius:		4px;
-	font-size: 500;
 }
 
 html	{
 	font-family: 			var(--html-font);
 	font-size: 				var(--html-font-size);
 	line-height: 			var(--html-line-height);
+	font-weight:			400;
 	padding: 				0;
 	margin: 				auto;
 	max-width: 				1200px;
@@ -85,8 +85,6 @@ body	{
 
 .menugroupitem:hover	{
 	background-color:		var(--navbar-alt);
-	border-radius: 			var(--border-radius);
-	filter:					contrast(100%) brightness(125%);
 }
 
 a:hover, a:visited, 
@@ -127,7 +125,7 @@ h6	{
 
 .iconz	{
 	font-family: 			iconz;
-	font-size: 				10px;
+	font-size: 				8px;
 }
 
 .icondivider	{
@@ -225,11 +223,15 @@ h6	{
 
 .dropdown:hover .dropdown-content	{
 	display: 				block;
-	top: 					38px;
+	top: 					37px;
 }
 
 .dropdownbutton	{
 	display: 				flex;
+}
+
+.dropdownmenubutton_last {
+	border-radius: 			0 0 var(--border-radius) var(--border-radius);
 }
 
 span	{
