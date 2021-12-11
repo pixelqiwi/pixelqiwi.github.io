@@ -1,17 +1,18 @@
 :root	{
 	--shadow: 				#111a 0px 6px 12px;
-	--html-font:			"Roboto Regular";
+	--html-font:			"Roboto";
 	--html-font-size: 		15px !important;
 	--html-line-height:		20px !important;
 	--html-bg: 				#7b4688;
 	--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
 							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
 	--navbar-bg: 			#4f2a56;
-	--navbar-alt:			#80458D80;
+	--navbar-alt:			#5d3365;
 	--post-title:			linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);
 	--post-bg: 				#4f2a56dd;
 	--pixelqiwi-text-col: 	#000f;
 	--border-radius:		4px;
+	font-size: 500;
 }
 
 html	{
@@ -78,7 +79,7 @@ body	{
 .menugroupitem	{
 	color: 					#fff;
 	padding: 				8px;
-	border-radius: 			var(--border-radius);
+	border-radius: 			0; /* проверь порядок классов в <div>'е в заголовке, у тебя alt позже menugroupitem */
 	transition: 			background 0.05s linear
 }
 
@@ -126,7 +127,7 @@ h6	{
 
 .iconz	{
 	font-family: 			iconz;
-	font-size: 				14px;
+	font-size: 				10px;
 }
 
 .icondivider	{
