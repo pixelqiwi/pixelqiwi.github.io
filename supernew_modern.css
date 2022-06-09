@@ -1,19 +1,55 @@
 :root	{
 	--shadow: 				#111a 0px 6px 12px;
-	--html-font:			"Roboto";
-	--html-font-size: 		15px !important;
+	--html-font: 			"gavnoEbanoe";
+	--html-font-size: 		12px !important;
 	--html-line-height:		20px !important;
-	--html-bg: 				#7b4688;
-	--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;
-	--navbar-bg: 			#4f2a56;
-	--navbar-alt:			#5d3365;
-	--post-title:			linear-gradient(180deg, rgba(159,96,226,1) 0%, rgba(128,69,141,0.8) 100%);
-	--post-bg: 				#4f2a56dd;
-	--pixelqiwi-text-col: 	#000f;
+	--html-bg: 				var(--blue7);
+	--html-bg-img:			none;
+	/*--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
+							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;*/
+	--navbar-bg: 			var(--blue4);
+	--navbar-alt:			var(--blue3);
+	--navbar-hover:			var(--blue5);
+	--post-title:			var(--blue4);
+	--post-bg: 				var(--blue6);
 	--border-radius:		4px;
+	
+	--text-shadow: 			0px 2px 2px black,0px 0px 4px #0008;
+	
+/* набор скруглённых углов потому что я заебался каждый раз проставлять их */
+
+	--borders-up:			var(--border-radius) var(--border-radius) 0 0;
+	--borders-down:			0 0 var(--border-radius) var(--border-radius);
+	--borders-left:			var(--border-radius) 0 0 var(--border-radius);
+	--borders-right:		0 var(--border-radius) var(--border-radius) 0;
+	
+	--orange1:				#f2380f; 	/* orange dark */
+	--orange2:				#f2610f;	/* orange light */
+	--orange3:				#d99e55;	/* orange lighter */
+	
+	--green4:				#022620;	/* green dark */
+	--green5:				#014039;	/* green light */
+	--green6:				#00695b;	/* green lighter */
+	
+	/* оттенки синего */
+	--blue1:				#E4EAF2;
+	--blue2:				#8FBDD9;
+	--blue3:				#048ABF;
+	--blue4:				#049DBF;
+	--blue5:				#04ADBF;
+	--blue6:				#035C80;
+	--blue7:				#012E40;
 }
 
+@font-face {
+  font-family: "gavnoEbanoe";
+  src: url("/media/seurat.ttf");
+}
+
+@font-face {
+  font-family: "pot";
+  src: url("/media/P0T-NOoDLE_v1.0.ttf");
+}
 html	{
 	font-family: 			var(--html-font);
 	font-size: 				var(--html-font-size);
@@ -22,7 +58,7 @@ html	{
 	padding: 				0;
 	margin: 				auto;
 	max-width: 				1200px;
-	min-width: 				1200px;
+	/*min-width: 				1200px;*/
 	font-smooth: 			never;
 	background: 			var(--html-bg-img);
 	background-color: 		var(--html-bg);
@@ -37,13 +73,14 @@ body	{
 	background-color: 		var(--navbar-bg);
 	display: 				flex;
 	margin-top: 			16px;
+	margin-bottom:			8px;
 	position: 				sticky;
 	top: 					-1;
 	border-radius: 			var(--border-radius);
 	box-shadow: 			var(--shadow);
-	z-index: 				3
+	z-index: 				3;
 }
-
+/* 
 .alt	{
 	background-color: 		var(--navbar-alt);
 	border-radius: 			0
@@ -79,14 +116,14 @@ body	{
 .menugroupitem	{
 	color: 					#fff;
 	padding: 				8px;
-	border-radius: 			0; /* проверь порядок классов в <div>'е в заголовке, у тебя alt позже menugroupitem */
+	border-radius: 			0; 
 	transition: 			background 0.05s linear
 }
 
 .menugroupitem:hover	{
 	background-color:		var(--navbar-alt);
 }
-
+ */
 a:hover, a:visited, 
 a:link, a:active	{
 	text-decoration: 		none;
@@ -134,7 +171,6 @@ h6	{
 
 .containerstack	{
 	display: 				flex;
-	margin-top: 			16px;
 }
 
 .postdivider	{
@@ -147,6 +183,7 @@ h6	{
 	background: 			var(--post-bg);
 	border-radius: 			8px 8px 4px 4px;
 	box-shadow: 			var(--shadow);
+	margin:					8px 0;
 }
 
 .posttitle	{
@@ -201,7 +238,7 @@ h6	{
 .footertext	{
 	color: 					#fff;
 }
-
+/* старый навбар который я любил
 .dropdown	{
 	position: 				relative;
 	display: 				inline-block;
@@ -233,7 +270,7 @@ h6	{
 .dropdownmenubutton_last {
 	border-radius: 			0 0 var(--border-radius) var(--border-radius);
 }
-
+*/
 span	{
 	cursor: 				default;
 	display: 				inline-flex;
@@ -412,4 +449,104 @@ img	{
 
 .f10	{					
 	flex: 					10;
+}
+
+/* новый навбар на jquery */
+
+.navbar	{
+	overflow: hidden;
+	font-family: var(--html-font);
+	font-size: var(--html-font-size);
+}
+
+.navbar-button:nth-child(odd)	{
+	background-color: var(--navbar-bg);
+}
+
+.navbar-button:nth-child(even)	{
+	background-color: var(--navbar-alt);
+}
+
+.navbar a	{
+	float: left;
+	text-align: center;
+	padding: 8px 16px; 
+	color: white;
+	text-decoration: none;
+	line-height: var(--html-line-height);
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	cursor: pointer;
+	font-size: var(--html-font-size);
+	border: none;
+	outline: none;
+	color: white;
+	padding: 8px 16px; /* почему-то тут паддинг должен быть на один px в высоту больше чем в .navbar, иначе неровно */
+	text-shadow: var(--textshadow);
+	font-family: inherit;
+	margin: 0;
+	line-height: var(--html-line-height);
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus	{
+	background-color: var(--navbar-hover);
+}
+
+.dropdown-content	{
+	display: none;
+	position: absolute;
+	background-color: var(--navbar-bg);
+	min-width: 160px;
+	box-shadow: var(--shadow);
+	z-index: 3;
+	border-radius: var(--borders-down);
+}
+
+.dropdown-content a	{
+	float: none;
+	color: #fff;
+	padding: 8px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	border-radius: var(--border-radius)
+}
+
+.dropdown-content a:hover	{
+	background-color: var(--navbar-hover);
+}
+
+.show	{
+	display: block;
+}
+
+.left-borders{
+	border-radius: var(--borders-left)
+}
+
+.right-borders{
+	border-radius: var(--borders-right)
+}
+
+.bottom-borders{
+	border-radius: var(--borders-down)
+}
+
+.top-borders{
+	border-radius: var(--borders-up)
+}
+
+
+@media only screen and (min-width: 600px) {
+	.containerstack {display: block;}
+	.postcontentleft {margin: auto;}
+}
+@media only screen and (min-width: 1200px) {
+	.containerstack {display: flex;}
 }
