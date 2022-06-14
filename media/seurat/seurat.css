@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'seurat';
+  src:url('seurat.woff') format('woff'),
+        url('seurat.woff2') format('woff2'),
+        url('seurat.svg#seurat') format('svg'),
+        url('seurat.eot'),
+        url('seurat.eot?#iefix') format('embedded-opentype'),
+        url('seurat.ttf') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
