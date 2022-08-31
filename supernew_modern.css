@@ -1,17 +1,17 @@
 :root	{
-	--shadow: 				#111a 0px 6px 12px;
-	--html-font: 			"gavnoEbanoe";
+	--shadow: 			#111a 0px 6px 12px;
+	--html-font: 			"gavnoEbanoe", sans-serif;
 	--html-font-size: 		12px !important;
 	--html-line-height:		20px !important;
-	--html-bg: 				var(--blue7);
+	--html-bg: 			var(--blue7);
 	--html-bg-img:			none;
-	/*--html-bg-img:			url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-							url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;*/
+	/*--html-bg-img:		url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
+					url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;*/
 	--navbar-bg: 			var(--blue4);
 	--navbar-alt:			var(--blue3);
 	--navbar-hover:			var(--blue5);
 	--post-title:			var(--blue4);
-	--post-bg: 				var(--blue6);
+	--post-bg: 			var(--blue6);
 	--border-radius:		4px;
 	
 	--text-shadow: 			0px 2px 2px black,0px 0px 4px #0008;
