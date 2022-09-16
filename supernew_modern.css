@@ -62,7 +62,7 @@ html	{
 	font-smooth: 			never;
 	background: 			var(--html-bg-img);
 	background-color: 		var(--html-bg);
-	background-blend-mode: 	screen;
+	/* background-blend-mode: 	screen; */
 }
 
 body	{

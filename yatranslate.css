@@ -6,8 +6,8 @@
     text-align: center;
     background: var(--navbar-bg);
     perspective: 700px;
-    border-radius: var(--borders-up);
-	box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 .lang_fixed {
@@ -41,6 +41,7 @@
 
 .lang__link_sub:hover {
     background: var(--navbar-hover);
+	border-radius: var(--border-radius)
 }
 
 
@@ -77,8 +78,9 @@
     line-height: 13px;
     transform-origin: center top;
     box-sizing: border-box;
-    border-radius: var(--borders-down);
-	box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
 }
 
 .lang__list {
