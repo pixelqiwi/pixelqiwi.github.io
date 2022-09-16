@@ -4,7 +4,7 @@
 	--html-font-size: 		12px !important;
 	--html-line-height:		20px !important;
 	--html-bg: 			var(--blue7);
-	--html-bg-img:			none;
+	--html-bg-img:			url(../media/bgpattern.png);
 	/*--html-bg-img:		url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
 					url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;*/
 	--navbar-bg: 			var(--blue4);
@@ -281,11 +281,11 @@ body::-webkit-scrollbar	{
 }
 
 body::-webkit-scrollbar-track	{
-	background: 			#088;
+	background: 			#035c80;
 }
 
 body::-webkit-scrollbar-thumb	{
-	background-color: 		#0ff !important;
+	background-color: 		#049dbf !important;
 	outline: 				none !important;
 }
 
