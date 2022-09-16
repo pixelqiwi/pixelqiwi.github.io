@@ -319,16 +319,16 @@ body::-webkit-scrollbar-thumb	{
 
 @keyframes lmao	{
 	0%	{
-		box-shadow: 		#fdba31 8px 16px;
+		box-shadow: 		#fdba31 0px 0px 10px;
 	}
 	49.9%	{
-		box-shadow: 		#fdba31 8px 16px;
+		box-shadow: 		#fdba31 0px 0px 10px;
 	}
 	50%	{
-		box-shadow: 		#020f23 8px 16px;
+		box-shadow: 		#020f23 0px 0px 10px;
 	}
 	100%	{
-		box-shadow: 		#020f23 8px 16px;
+		box-shadow: 		#020f23 0px 0px 10px;
 	}
 }
 
@@ -380,11 +380,12 @@ img	{
 	display: 				flex;
 	flex-direction: 		column;
 	text-align: 			center;
-	background: 			var(--post-bg);
+	background: 			var(--blue3);
 	padding: 				8px;
 	border-radius: 			var(--border-radius);
 	transition: 			background 0.05s linear;
 	font-size:				12px;
+    align-items: center;
 }
 
 .acnh-villager:hover	{
@@ -402,6 +403,11 @@ img	{
 .acnh-200px	{
 	max-width:				215px;
 	max-height:				215px;
+}
+
+.acnh-100px	{
+	max-width:				128px;
+	max-height:				128px;
 }
 
 .acnh-50px	{
@@ -474,6 +480,7 @@ img	{
 	color: white;
 	text-decoration: none;
 	line-height: var(--html-line-height);
+	transition: 0.05s;
 }
 
 .dropdown {
@@ -540,6 +547,51 @@ img	{
 
 .top-borders{
 	border-radius: var(--borders-up)
+}
+
+.text-50px {
+	max-width: 94px
+}
+
+.text-100px {
+	max-width: 128px
+}
+
+.icon-in-text {
+	width: 14px;
+	height: 14px;
+}
+
+p {
+    display: inherit;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+	color: #fff;
+}
+
+.acnh-villager a {
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 128px;
+}
+
+.button {
+	text-align: center;
+	padding: 8px 16px; 
+	color: white;
+	text-decoration: none;
+	line-height: var(--html-line-height);
+	background-color: var(--navbar-alt);
+	transition: 0.1s
+}
+
+.button:hover {
+	background-color:var(--navbar-hover);
 }
 
 
