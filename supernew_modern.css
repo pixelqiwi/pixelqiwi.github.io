@@ -594,6 +594,14 @@ p {
 	background-color:var(--navbar-hover);
 }
 
+.center-google-translate {
+	justify-content: center;
+}
+
+.force-no-text-shadow {
+	text-shadow: none !important
+}
+
 
 @media only screen and (min-width: 600px) {
 	.containerstack {display: block;}

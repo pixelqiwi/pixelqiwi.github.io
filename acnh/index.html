@@ -7,7 +7,6 @@
 		<link href="../media/favicon.png" rel="icon" type="image/png">
 		<link href="../supernew_modern.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="../yatranslate.css">
-		<script src="../yatranslate.js"></script>
 		<meta charset="UTF-8">
 		<meta content="noindex, nofollow" name="robots">
 		<script src="https://code.jquery.com/jquery-1.10.2.js">
@@ -15,47 +14,28 @@
 	</head>
 
 	<body>
+	<!-- super google translate script -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+		</script>
+
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- google translate script end -->
+	
 		<header class="header">
 			<div id="nav-placeholder">
 			</div>
 		</header>
 		
-		<div class="lmao lang lang_fixed" bis_skin_checked="1">
-            <div id="ytWidget" style="display: none;" bis_skin_checked="1">
-				<div id="yt-widget" class="yt-widget yt-state_active yt-state_done yt-state_busy" tabindex="-1" translate="no" data-theme="light" bis_skin_checked="1">
-				<div class="yt-wrapper yt-wrapper_align_right" bis_skin_checked="1">
-				</div>
-			</div>
-		</div>
-            <div class="lang__link lang__link_select" data-lang-active="" bis_skin_checked="1">
-				<img class="lang__img lang__img_select" src="../media/flags/ru.png" alt="ru">
-			</div>
-            <div class="lmao lang__list" data-lang-list="" bis_skin_checked="1">
-                <a class="lang__link lang__link_sub" data-ya-lang="ru">
-                    <img class="lang__img" src="../media/flags/ru.png" alt="ru">
-                </a>
-                <a class="lang__link lang__link_sub" data-ya-lang="en">
-                    <img class="lang__img" src="../media/flags/en.png" alt="en">
-                </a>
-                <a class="lang__link lang__link_sub" data-ya-lang="fr">
-                    <img class="lang__img" src="../media/flags/fr.png" alt="fr">
-                </a>
-                <a class="lang__link lang__link_sub" data-ya-lang="zh">
-                    <img class="lang__img" src="../media/flags/zh.png" alt="zh">
-                </a>
-            </div>
-        </div>
-		
 		<div class="containerstack">
 			<div class="post f5">
-				<div class="postcontent">
+				<div class="postcontent center-google-translate">
 					<div class="postcontentright">
 						<center>
-						Чтобы вам было проще читать русский текст без знания русского языка, я прикрутил к этой странице (и только к ней) переводчик, поэтому некоторые тексты могут быть переведены немного некорректно.
-						<br>
-						Переводчик также ломает пару кнопок в верхнем меню - я об этом знаю, и чинить не собираюсь, ибо оно и так работает на говне и палках.
-						<br>
-						Заранее извиняюсь за любую возможную путаницу, вызванную неверным переводом. 
+							Please use this to view the page in your language.
+							<div class="force-no-text-shadow" id="google_translate_element"></div>
 						</center>
 					</div>
 				</div>
