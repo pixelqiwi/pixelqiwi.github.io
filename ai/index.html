@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="textshadow">
+	<head>
+		<title>
+			pixelqiwi diffusion
+		</title>
+		<link href="../media/favicon.png" rel="icon" type="image/png">
+		<link href="../supernew_modern.css" rel="stylesheet" type="text/css">
+		<meta charset="UTF-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script src="https://code.jquery.com/jquery-1.10.2.js">
+		</script>
+	</head>
+
+	<body>
+	
+	<!-- super google translate script -->
+		<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+		}
+		</script>
+
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- google translate script end -->
+	
+		<header class="header">
+			<div id="nav-placeholder">
+			</div>
+		</header>
+		
+		<div class="containerstack">
+			<div class="post f5">
+				<div class="postcontent center-google-translate">
+					<div class="postcontentright">
+						<center>
+							Please use this to view the page in your language.
+							<div class="force-no-text-shadow" id="google_translate_element"></div>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="containerstack">
+			<div class="post">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>информация</a>
+					</span>
+				</div>
+
+				<div class="postcontent">
+					<div class="postcontentright" style="flex: 10;">
+						здесь собрана вся информация, которую я когда-либо для себя помечал в контексте использования Stable Diffusion Web UI от Automatic1111
+						<br>
+						промпты, теги, гайды - что помню, всё опишу
+						
+						<center>Мои модели:</center>
+					</div>
+				</div>
+				<div class="postcontent">
+					<div class="postcontentleft acnh-photogrid">
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/15574/teri-hypernetwork">	
+								<img class="acnh-100px postimage" src="https://cdn2.nookdb.io/full/MenuIcon/Lobster.png">
+								<p class="text-100px">teri</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/15586/gaturo-gatodelfuturo-hypernetwork" title="мирзаев иди нахуй">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/5ivtrua.png">
+								<p class="text-100px">gaturo</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/15679/gris-hypernetwork">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/afyme1p.png">
+								<p class="text-100px">gris</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/15935/noelle-hypernetwork">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/qi5Dc4O.png">
+								<p class="text-100px">noelle</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/125027/temmie-hypernetwork">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/A1aQ7uw.png">
+								<p class="text-100px">temmie</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/140992/sable-able-hypernetwork">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/SMGhJFa.png">
+								<p class="text-100px">sable able</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="containerstack">
+			<div class="post f8">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>гайд: тренировка hypernetwork сетей</a>
+					</span>
+				</div>
+
+				<div class="postcontent" id="hypernets">
+					<div class="postcontentright" style="flex: 10;">
+					Здесь я опишу то, как я подготавливаю датасет и делаю свои hypernetwork модели.
+					<br>
+					Ранее имело смысл пользоваться Google Colab-ом для тренировки на мощностях гугла, но ныне это невозможно в связи с баном всех Web UI на Colab-е.
+					<br>
+					<br>
+						<h2>Что нам нужно:</h2>
+						<p>1. 20-30 изображений с персонажем/стилем, которому мы будем обучать SD</p>
+						<p>2. Много гигов видеопамяти</p>
+						<p>3. Много свободного времени</p>
+					<br>
+					Тренировка силами гугла займёт около 20 минут, тренировка своими силами займёт намного дольше (с датасетом в 20 картинок, на RTX 3060 c 12 ГБ видеопамяти тренировка занимает у меня чуть больше часа).
+						<h2>Порядок действий:</h2>
+						<h3>Этап 1. Сбор материала</h3>
+						<p>Идём на сайты с артами и собираем кандидатов на участие в датасете. Хороший арт должен соответствовать нескольким пунктам:<br>
+						・Персонаж не должен быть обрезан ни с какой из сторон<br>
+						・В идеале на арте должен быть максимально простой фон (однотонный, градиент, и т.п.)<br>
+						・Если собирается арт от разных художников, то сам рисунок должен быть максимально качественным (даже один страшненький рисунок может испортить весь результат)</p>
+						Советую всё это собрать где-нибудь в одной отдельной папке.
+						
+						<h3>Этап 2. Подготовка материала</h3>
+						<p>Этот пункт занимает больше всего времени, и он не столько сложный, сколько нудный. Лично я пользуюсь <a href="https://github.com/picobyte/stable-diffusion-webui-wd14-tagger">автоматическим теггером</a> для быстрого процессинга 20 изображений, и потом ручками прохожусь по каждому .txt файлу, убирая лишнее и добавляя нужное. Из-за того что я в основном тренирую модели на фуррях, в теггере я пользуюсь фурри моделью с E621 тегами.<br>
+						Теггинг у меня проходит так:<br>
+						・пол персонажа (male/female),<br>
+						・одежда персонажа и её цвет (red shirt, white pants, и т.д.),<br>
+						・поза персонажа (standing, sitting, lying, и т.п.),<br>
+						・что происходит на фоне (city background, forest background, simple background, и т.п.),<br>
+						・мета теги (прим. portrait). Чем детальнее, тем лучше, но без фанатизма.</p>
+						<p>После теггинга нам нужно обрезать/расширить наши арты до соотношения 1:1, и затем ресайзнуть до 512х512. Опять же, персонаж не должен быть обрезан.</p>
+						<p>Получившиеся квадратные изображения и .txt файлы с тегами от них нужно поместить в одной папке. Убедитесь, что названия файлов попарно совпадают (например у изображения image.png должна быть пара в виде image.txt).</p>
+						<h3>Этап 3. Подготовка Web UI</h3>
+						<p>Мне лично нравится когда при включении hypernetwork-a он сразу начинает работать без каких-либо ключевых тегов, поэтому я расскажу как сделать так, чтобы он всегда работал. В корне нейросети есть папка "textual_inversion_templates", нам там нужно создать свой .txt файл, в котором мы напишем "[filewords]" и ничего более.</p>
+						<h3>Этап 4. Тренинг</h3>
+						<p>Для этого нам нужно запустить наш Web UI и выбрать checkpoint, поверх которого мы будем учить hypernetwork (для фурри персонажей советую yiffymix, для аниме - всё остальное), и уже затем перейти во вкладку "Train", там перейти на вкладку "Create hypernetwork", вписать название сети в "Name" и нажать "Create hypernetwork". Так мы создадим пустую оболочку для нашей сети.</p>
+						<p>Далее идём на вкладку "Train", в списке "Hypernetwork" выбираем нашу пустышку, и начинаем указывать настройки для тренировки:</p>
+						<p>・Hypernetwork Learning rate: 0.00005</p>
+						<p>・Dataset directory: указываем путь до папки с нашим датасетом</p>
+						<p>・Prompt template: указываем наш темплейт, который мы создавали в третьем пункте</p>
+						<p>・Max steps: 2000</p>
+						<p>・Включаем "Shuffle tags by ',' when creating prompts"</p>
+						<p>・В методе выбираем "deterministic"</p>
+						<p>И после этого всего можем жать на "Train Hypernetwork".</p>
+						<br>
+						<p>Если всё было сделано верно, то каждые 500 шагов в интерфейсе будет появляться сгенерированный арт с вашей сетью. Он будет страшноватый, да, но стоит учитывать, что в данных артах сетка используется на 1.0 от её силы, а мы же в свою очередь будем прибегать максимум к 0.5-0.8, давая чекпоинту шанс сделать красиво. Не очкуйте, короче.</p>
+						<br>
+						<p>P.S. У меня в заметках написано, что если в датасете более 100 артов, то в Max steps надо ставить 4000. Я не знаю откуда я взял эту цифру, но раз написал - значит пробовал.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="containerstack">
+			<div class="post">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>примеры художников в yiffymix </a> <a title="positive prompt: solo, female, toriel dreemurr, undertale, portrait, dress, by %artist% 
+negative prompt: nipples, nsfw, nude, naked, (low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2), boring_e621_v4, bad-hands-5, easynegative, ng_deepnegative_v1_75t
+sampler: DPM adaptive
+steps: 40
+res: 512x768
+seed: 3334997821">[i]</a>
+					</span>
+				</div>
+
+				<div class="postcontent">
+					<div class="postcontentleft acnh-photogrid">
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ymUSpCS.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ymUSpCS.png">
+								<p class="text-200px">by tofu froth</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ZxZYdfK.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ZxZYdfK.png">
+								<p class="text-200px">by cooliehigh</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/t8t2Mwu.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/t8t2Mwu.png">
+								<p class="text-200px">by dagasi</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/jLCKJJt.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/jLCKJJt.png">
+								<p class="text-200px">by pixar</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ilkJtiz.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ilkJtiz.png">
+								<p class="text-200px">by peculiart</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/O0bNEsw.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/O0bNEsw.png">
+								<p class="text-200px">by inkplasm</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/5sIoy8C.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/5sIoy8C.png">
+								<p class="text-200px">by jcm2</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/dCxwXc4.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/dCxwXc4.png">
+								<p class="text-200px">by bzeh</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ltwF8vb.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ltwF8vb.png">
+								<p class="text-200px">by dracreloaded</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/Az7CRs5.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/Az7CRs5.png">
+								<p class="text-200px">by iskra</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/QIer1Mt.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/QIer1Mt.png">
+								<p class="text-200px">by hanuvo</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/3yx1HTU.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/3yx1HTU.png">
+								<p class="text-200px">by coffeechicken</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ez3vZ9k.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ez3vZ9k.png">
+								<p class="text-200px">by bypbap</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/gOPLh7w.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/gOPLh7w.png">
+								<p class="text-200px">by buta99</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/pL2ZSKd.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/pL2ZSKd.png">
+								<p class="text-200px">by whisperfoot</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/cT1xp9K.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/cT1xp9K.png">
+								<p class="text-200px">by whisperingfornothing</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/whdlWyh.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/whdlWyh.png">
+								<p class="text-200px">by vader-san</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/kU8bq2M.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/kU8bq2M.png">
+								<p class="text-200px">by thousandfoldfeathers</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/b1w2oKZ.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/b1w2oKZ.png">
+								<p class="text-200px">by the-minuscule-task</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/H6o3LeV.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/H6o3LeV.png">
+								<p class="text-200px">by svarzye</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/XwwZ5mG.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/XwwZ5mG.png">
+								<p class="text-200px">by somescrub</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/qGoOdFl.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/qGoOdFl.png">
+								<p class="text-200px">by slipperycupcake</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/7zFsh0q.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/7zFsh0q.png">
+								<p class="text-200px">by secretly saucy</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/hJf9KCT.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/hJf9KCT.png">
+								<p class="text-200px">by slugbox</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/gRvJtPE.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/gRvJtPE.png">
+								<p class="text-200px">by picturd</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/JjY1IAN.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/JjY1IAN.png">
+								<p class="text-200px">by r-mk</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/GnSiQSm.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/GnSiQSm.png">
+								<p class="text-200px">by pinkaxolotl</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/UUZLG9Z.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/UUZLG9Z.png">
+								<p class="text-200px">by faeki</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/7X4mjDV.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/7X4mjDV.png">
+								<p class="text-200px">by cumbread</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/lDtpUSD.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/lDtpUSD.png">
+								<p class="text-200px">by coldarsenal</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/87eogWf.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/87eogWf.png">
+								<p class="text-200px">by cherrikissu</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/ulb3oSO.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/ulb3oSO.png">
+								<p class="text-200px">by chelodoy</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/cWEGb4C.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/cWEGb4C.png">
+								<p class="text-200px">by qupostuv35</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/1Ltttpx.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/1Ltttpx.png">
+								<p class="text-200px">by unknowhiter</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://i.imgur.com/NOJjRYC.png" target=”_blank”>	
+								<img class="acnh-200px postimage" src="https://i.imgur.com/NOJjRYC.png">
+								<p class="text-200px">by qrichy</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		</div>
+		<script>
+		$(function()
+		{
+			$("#nav-placeholder")
+			.load("../menu.html");
+		});
+		</script>
+		<script>
+		          $(function()
+		          {
+		              $("#footer")
+		                  .load("../superfooter.html");
+		          });
+		</script>
+		<div id="footer"></div>
+	</body>
+</html>
