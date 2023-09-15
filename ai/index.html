@@ -4,6 +4,7 @@
 		<title>
 			pixelqiwi diffusion
 		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../media/favicon.png" rel="icon" type="image/png">
 		<link href="../supernew_modern.css" rel="stylesheet" type="text/css">
 		<meta charset="UTF-8">
@@ -102,73 +103,78 @@
 				</div>
 			</div>
 		</div>
-			
-		<div class="containerstack">
-			<div class="post f8">
-				<div class="posttitle">
-					<span class="posttitleleft">
-						<a>гайд: тренировка hypernetwork сетей</a>
-					</span>
-				</div>
 
-				<div class="postcontent" id="hypernets">
-					<div class="postcontentright" style="flex: 10;">
-					Здесь я опишу то, как я подготавливаю датасет и делаю свои hypernetwork модели.
-					<br>
-					Ранее имело смысл пользоваться Google Colab-ом для тренировки на мощностях гугла, но ныне это невозможно в связи с баном всех Web UI на Colab-е.
-					<br>
-					<br>
-						<h2>Что нам нужно:</h2>
-						<p>1. 20-30 изображений с персонажем/стилем, которому мы будем обучать SD</p>
-						<p>2. Много гигов видеопамяти</p>
-						<p>3. Много свободного времени</p>
-					<br>
-					Тренировка силами гугла займёт около 20 минут, тренировка своими силами займёт намного дольше (с датасетом в 20 картинок, на RTX 3060 c 12 ГБ видеопамяти тренировка занимает у меня чуть больше часа).
-						<h2>Порядок действий:</h2>
-						<h3>Этап 1. Сбор материала</h3>
-						<p>Идём на сайты с артами и собираем кандидатов на участие в датасете. Хороший арт должен соответствовать нескольким пунктам:<br>
-						・Персонаж не должен быть обрезан ни с какой из сторон<br>
-						・В идеале на арте должен быть максимально простой фон (однотонный, градиент, и т.п.)<br>
-						・Если собирается арт от разных художников, то сам рисунок должен быть максимально качественным (даже один страшненький рисунок может испортить весь результат)</p>
-						Советую всё это собрать где-нибудь в одной отдельной папке.
-						
-						<h3>Этап 2. Подготовка материала</h3>
-						<p>Этот пункт занимает больше всего времени, и он не столько сложный, сколько нудный. Лично я пользуюсь <a href="https://github.com/picobyte/stable-diffusion-webui-wd14-tagger">автоматическим теггером</a> для быстрого процессинга 20 изображений, и потом ручками прохожусь по каждому .txt файлу, убирая лишнее и добавляя нужное. Из-за того что я в основном тренирую модели на фуррях, в теггере я пользуюсь фурри моделью с E621 тегами.<br>
-						Теггинг у меня проходит так:<br>
-						・пол персонажа (male/female),<br>
-						・одежда персонажа и её цвет (red shirt, white pants, и т.д.),<br>
-						・поза персонажа (standing, sitting, lying, и т.п.),<br>
-						・что происходит на фоне (city background, forest background, simple background, и т.п.),<br>
-						・мета теги (прим. portrait). Чем детальнее, тем лучше, но без фанатизма.</p>
-						<p>После теггинга нам нужно обрезать/расширить наши арты до соотношения 1:1, и затем ресайзнуть до 512х512. Опять же, персонаж не должен быть обрезан.</p>
-						<p>Получившиеся квадратные изображения и .txt файлы с тегами от них нужно поместить в одной папке. Убедитесь, что названия файлов попарно совпадают (например у изображения image.png должна быть пара в виде image.txt).</p>
-						<h3>Этап 3. Подготовка Web UI</h3>
-						<p>Мне лично нравится когда при включении hypernetwork-a он сразу начинает работать без каких-либо ключевых тегов, поэтому я расскажу как сделать так, чтобы он всегда работал. В корне нейросети есть папка "textual_inversion_templates", нам там нужно создать свой .txt файл, в котором мы напишем "[filewords]" и ничего более.</p>
-						<h3>Этап 4. Тренинг</h3>
-						<p>Для этого нам нужно запустить наш Web UI и выбрать checkpoint, поверх которого мы будем учить hypernetwork (для фурри персонажей советую yiffymix, для аниме - всё остальное), и уже затем перейти во вкладку "Train", там перейти на вкладку "Create hypernetwork", вписать название сети в "Name" и нажать "Create hypernetwork". Так мы создадим пустую оболочку для нашей сети.</p>
-						<p>Далее идём на вкладку "Train", в списке "Hypernetwork" выбираем нашу пустышку, и начинаем указывать настройки для тренировки:</p>
-						<p>・Hypernetwork Learning rate: 0.00005</p>
-						<p>・Dataset directory: указываем путь до папки с нашим датасетом</p>
-						<p>・Prompt template: указываем наш темплейт, который мы создавали в третьем пункте</p>
-						<p>・Max steps: 2000</p>
-						<p>・Включаем "Shuffle tags by ',' when creating prompts"</p>
-						<p>・В методе выбираем "deterministic"</p>
-						<p>И после этого всего можем жать на "Train Hypernetwork".</p>
-						<br>
-						<p>Если всё было сделано верно, то каждые 500 шагов в интерфейсе будет появляться сгенерированный арт с вашей сетью. Он будет страшноватый, да, но стоит учитывать, что в данных артах сетка используется на 1.0 от её силы, а мы же в свою очередь будем прибегать максимум к 0.5-0.8, давая чекпоинту шанс сделать красиво. Не очкуйте, короче.</p>
-						<br>
-						<p>P.S. У меня в заметках написано, что если в датасете более 100 артов, то в Max steps надо ставить 4000. Я не знаю откуда я взял эту цифру, но раз написал - значит пробовал.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
 		<div class="containerstack">
 			<div class="post">
 				<div class="posttitle">
 					<span class="posttitleleft">
-						<a>примеры художников в yiffymix </a> <a title="positive prompt: solo, female, toriel dreemurr, undertale, portrait, dress, by %artist% 
+						<a>Любимые чекпоинты:</a>
+					</span>
+				</div>
+
+				<div class="postcontent">
+					<div class="postcontentleft acnh-photogrid">
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/3671/yiffymix">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/4n1c6bQ.png">
+								<p class="text-100px">YiffyMix v3.2</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/7241/mix-pro-v4">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/13nkszP.png">
+								<p class="text-100px">MixPro V3</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/16032/showmakermix">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/afyme1p.png">
+								<p class="text-100px">ShowmakerMix</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="postdivider"></div>
+			
+			<div class="post">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>Любимые лоры:</a>
+					</span>
+				</div>
+
+				<div class="postcontent">
+					<div class="postcontentleft acnh-photogrid">
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/3671/yiffymix">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/4n1c6bQ.png">
+								<p class="text-100px">YiffyMix v3.2</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/7241/mix-pro-v4">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/13nkszP.png">
+								<p class="text-100px">MixPro V3</p>
+							</a>
+						</div>
+						<div class="acnh-villager"> 
+							<a href="https://civitai.com/models/16032/showmakermix">	
+								<img class="acnh-100px postimage" src="https://i.imgur.com/afyme1p.png">
+								<p class="text-100px">ShowmakerMix</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div class="containerstack">
+			<div class="post">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>примеры визуально интересных художников в yiffymix v3.2 </a> <a title="positive prompt: solo, female, toriel dreemurr, undertale, portrait, dress, by %artist% 
 negative prompt: nipples, nsfw, nude, naked, (low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2), boring_e621_v4, bad-hands-5, easynegative, ng_deepnegative_v1_75t
 sampler: DPM adaptive
 steps: 40
@@ -596,6 +602,33 @@ seed: 3334997821">[i]</a>
 											</a>
 										</div>
 									</li>
+
+									<li class="splide__slide">
+										<div class="acnh-villager"> 
+											<a>	
+											<img class="acnh-200px postimage" src="https://i.imgur.com/9A9JrWq.png">
+											<p class="text-200px">by dimwitdog</p>
+											</a>
+										</div>
+									</li>
+
+									<li class="splide__slide">
+										<div class="acnh-villager"> 
+											<a>	
+											<img class="acnh-200px postimage" src="https://i.imgur.com/YkexYYF.png">
+											<p class="text-200px">by nickelodeon</p>
+											</a>
+										</div>
+									</li>
+
+									<li class="splide__slide">
+										<div class="acnh-villager"> 
+											<a>	
+											<img class="acnh-200px postimage" src="https://i.imgur.com/h7MTcmQ.png">
+											<p class="text-200px">by leonardo da vinci</p>
+											</a>
+										</div>
+									</li>
 									
 								</ul>
 							</div>
@@ -604,7 +637,67 @@ seed: 3334997821">[i]</a>
 				</div>
 			</div>
 		</div>
-		
+			
+		<div class="containerstack">
+			<div class="post f8">
+				<div class="posttitle">
+					<span class="posttitleleft">
+						<a>гайд: тренировка hypernetwork сетей</a>
+					</span>
+				</div>
+
+				<div class="postcontent" id="hypernets">
+					<div class="postcontentright" style="flex: 10;">
+					Здесь я опишу то, как я подготавливаю датасет и делаю свои hypernetwork модели.
+					<br>
+					Ранее имело смысл пользоваться Google Colab-ом для тренировки на мощностях гугла, но ныне это невозможно в связи с баном всех Web UI на Colab-е.
+					<br>
+					<br>
+						<h2>Что нам нужно:</h2>
+						<p>1. 20-30 изображений с персонажем/стилем, которому мы будем обучать SD</p>
+						<p>2. Много гигов видеопамяти</p>
+						<p>3. Много свободного времени</p>
+					<br>
+					Тренировка силами гугла займёт около 20 минут, тренировка своими силами займёт намного дольше (с датасетом в 20 картинок, на RTX 3060 c 12 ГБ видеопамяти тренировка занимает у меня чуть больше часа).
+						<h2>Порядок действий:</h2>
+						<h3>Этап 1. Сбор материала</h3>
+						<p>Идём на сайты с артами и собираем кандидатов на участие в датасете. Хороший арт должен соответствовать нескольким пунктам:<br>
+						・Персонаж не должен быть обрезан ни с какой из сторон<br>
+						・В идеале на арте должен быть максимально простой фон (однотонный, градиент, и т.п.)<br>
+						・Если собирается арт от разных художников, то сам рисунок должен быть максимально качественным (даже один страшненький рисунок может испортить весь результат)</p>
+						Советую всё это собрать где-нибудь в одной отдельной папке.
+						
+						<h3>Этап 2. Подготовка материала</h3>
+						<p>Этот пункт занимает больше всего времени, и он не столько сложный, сколько нудный. Лично я пользуюсь <a href="https://github.com/picobyte/stable-diffusion-webui-wd14-tagger">автоматическим теггером</a> для быстрого процессинга 20 изображений, и потом ручками прохожусь по каждому .txt файлу, убирая лишнее и добавляя нужное. Из-за того что я в основном тренирую модели на фуррях, в теггере я пользуюсь фурри моделью с E621 тегами.<br>
+						Теггинг у меня проходит так:<br>
+						・пол персонажа (male/female),<br>
+						・одежда персонажа и её цвет (red shirt, white pants, и т.д.),<br>
+						・поза персонажа (standing, sitting, lying, и т.п.),<br>
+						・что происходит на фоне (city background, forest background, simple background, и т.п.),<br>
+						・мета теги (прим. portrait). Чем детальнее, тем лучше, но без фанатизма.</p>
+						<p>После теггинга нам нужно обрезать/расширить наши арты до соотношения 1:1, и затем ресайзнуть до 512х512. Опять же, персонаж не должен быть обрезан.</p>
+						<p>Получившиеся квадратные изображения и .txt файлы с тегами от них нужно поместить в одной папке. Убедитесь, что названия файлов попарно совпадают (например у изображения image.png должна быть пара в виде image.txt).</p>
+						<h3>Этап 3. Подготовка Web UI</h3>
+						<p>Мне лично нравится когда при включении hypernetwork-a он сразу начинает работать без каких-либо ключевых тегов, поэтому я расскажу как сделать так, чтобы он всегда работал. В корне нейросети есть папка "textual_inversion_templates", нам там нужно создать свой .txt файл, в котором мы напишем "[filewords]" и ничего более.</p>
+						<h3>Этап 4. Тренинг</h3>
+						<p>Для этого нам нужно запустить наш Web UI и выбрать checkpoint, поверх которого мы будем учить hypernetwork (для фурри персонажей советую yiffymix, для аниме - всё остальное), и уже затем перейти во вкладку "Train", там перейти на вкладку "Create hypernetwork", вписать название сети в "Name" и нажать "Create hypernetwork". Так мы создадим пустую оболочку для нашей сети.</p>
+						<p>Далее идём на вкладку "Train", в списке "Hypernetwork" выбираем нашу пустышку, и начинаем указывать настройки для тренировки:</p>
+						<p>・Hypernetwork Learning rate: 0.00005</p>
+						<p>・Dataset directory: указываем путь до папки с нашим датасетом</p>
+						<p>・Prompt template: указываем наш темплейт, который мы создавали в третьем пункте</p>
+						<p>・Max steps: 2000</p>
+						<p>・Включаем "Shuffle tags by ',' when creating prompts"</p>
+						<p>・В методе выбираем "deterministic"</p>
+						<p>И после этого всего можем жать на "Train Hypernetwork".</p>
+						<br>
+						<p>Если всё было сделано верно, то каждые 500 шагов в интерфейсе будет появляться сгенерированный арт с вашей сетью. Он будет страшноватый, да, но стоит учитывать, что в данных артах сетка используется на 1.0 от её силы, а мы же в свою очередь будем прибегать максимум к 0.5-0.8, давая чекпоинту шанс сделать красиво. Не очкуйте, короче.</p>
+						<br>
+						<p>P.S. У меня в заметках написано, что если в датасете более 100 артов, то в Max steps надо ставить 4000. Я не знаю откуда я взял эту цифру, но раз написал - значит пробовал.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		</div>
 		<script>
 		$(function()

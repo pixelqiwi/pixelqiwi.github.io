@@ -1,37 +1,38 @@
 :root	{
-	--shadow: 			#111a 0px 6px 12px;
+	--shadow: 		    	#111a 0 0.25rem 0.5rem;
 	--html-font: 			"gavnoEbanoe", sans-serif;
-	--html-font-size: 		12px !important;
-	--html-line-height:		20px !important;
-	--html-bg: 			var(--blue7);
-	--html-bg-img:			url(../media/bgpattern.png);
-	/*--html-bg-img:		url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
-					url(https://pixelqiwi.github.io/media/drOeNqh2zwQ.jpg) no-repeat center/768px fixed;*/
+	--html-font-size: 		0.8rem !important;
+	--html-line-height:		2em !important;
+	--html-bg: 			    var(--blue7);
+	/*--html-bg-img:		    url(https://nicolassassoon.com/IMAGES/LAVA_11.gif) center fixed, 
+							url(https://pixelqiwi.github.io/media/logo_inverse.png) no-repeat center/768px fixed;*/
 	--navbar-bg: 			var(--blue4);
 	--navbar-alt:			var(--blue3);
 	--navbar-hover:			var(--blue5);
 	--post-title:			var(--blue4);
-	--post-bg: 			var(--blue6);
-	--border-radius:		4px;
+	--post-bg: 		     	var(--blue6);
+	--border-radius:     	0.5rem;
 	
-	--text-shadow: 			0px 2px 2px black,0px 0px 4px #0008;
+	--text-shadow: 			0 5em 5em black,0 0 5em #0008;
 	
-/* набор скруглённых углов потому что я заебался каждый раз проставлять их */
+	--margin-unit:			0.75rem;
+	
+/* Ð½Ð°Ð±Ð¾Ñ€ ÑÐºÑ€ÑƒÐ³Ð»Ñ‘Ð½Ð½Ñ‹Ñ… ÑƒÐ³Ð»Ð¾Ð² Ð¿Ð¾Ñ‚Ð¾Ð¼Ñƒ Ñ‡Ñ‚Ð¾ Ñ Ð·Ð°ÐµÐ±Ð°Ð»ÑÑ ÐºÐ°Ð¶Ð´Ñ‹Ð¹ Ñ€Ð°Ð· Ð¿Ñ€Ð¾ÑÑ‚Ð°Ð²Ð»ÑÑ‚ÑŒ Ð¸Ñ… */
 
 	--borders-up:			var(--border-radius) var(--border-radius) 0 0;
 	--borders-down:			0 0 var(--border-radius) var(--border-radius);
 	--borders-left:			var(--border-radius) 0 0 var(--border-radius);
 	--borders-right:		0 var(--border-radius) var(--border-radius) 0;
-	
+/* pixelqiwi i tochka*/
 	--orange1:				#f2380f; 	/* orange dark */
-	--orange2:				#f2610f;	/* orange light */
+	--orange2:				#f1622e;	/* orange light */
 	--orange3:				#d99e55;	/* orange lighter */
 	
 	--green4:				#022620;	/* green dark */
 	--green5:				#014039;	/* green light */
 	--green6:				#00695b;	/* green lighter */
 	
-	/* оттенки синего */
+/* Ð¾Ñ‚Ñ‚ÐµÐ½ÐºÐ¸ ÑÐ¸Ð½ÐµÐ³Ð¾ */
 	--blue1:				#E4EAF2;
 	--blue2:				#8FBDD9;
 	--blue3:				#048ABF;
@@ -39,6 +40,11 @@
 	--blue5:				#04ADBF;
 	--blue6:				#035C80;
 	--blue7:				#012E40;
+
+	--cyan1:                #248da5;
+	--cyan2:                #26c6d8;
+	--pissyellow:           #f1d338;
+	--redred:               #f23131;
 }
 
 @font-face {
@@ -56,13 +62,11 @@ html	{
 	line-height: 			var(--html-line-height);
 	font-weight:			400;
 	padding: 				0;
-	margin: 				auto;
-	max-width: 				1200px;
-	/*min-width: 				1200px;*/
-	font-smooth: 			never;
+	margin: 				var(--margin-unit) auto;
+	max-width: 				90rem;
 	background: 			var(--html-bg-img);
 	background-color: 		var(--html-bg);
-	/* background-blend-mode: 	screen; */
+	/*background-blend-mode: 	screen; */
 }
 
 body	{
@@ -72,8 +76,7 @@ body	{
 .header	{
 	background-color: 		var(--navbar-bg);
 	display: 				flex;
-	margin-top: 			16px;
-	margin-bottom:			8px;
+	margin:					var(--margin-unit) 0;
 	position: 				sticky;
 	top: 					-1;
 	border-radius: 			var(--border-radius);
@@ -160,30 +163,21 @@ h6	{
 	font-weight: 			inherit;
 }
 
-.iconz	{
-	font-family: 			iconz;
-	font-size: 				8px;
-}
-
-.icondivider	{
-	margin:					0 2px;
-}
-
 .containerstack	{
 	display: 				flex;
 }
 
 .postdivider	{
-	min-width: 				16px;
+	margin: 				var(--margin-unit);
 }
 
 .post	{
-	min-height: 			6rem;
+	min-height: 			2rem;
 	flex: 					auto;
 	background: 			var(--post-bg);
-	border-radius: 			0.5rem;
+	border-radius: 			var(--border-radius);
 	box-shadow: 			var(--shadow);
-	margin:					1rem 0;
+	margin:					var(--margin-unit) 0;
 	max-width: 				-webkit-fill-available;
 }
 
@@ -191,14 +185,14 @@ h6	{
 	background: 			var(--post-title);
 	color: 					#fff;
 	display: 				flex;
-	border-radius: 			4px 4px 0 0;
-	padding: 				0px 12px;
-    min-height: 			32px;
+	border-radius: 			var(--border-radius) var(--border-radius) 0 0;
+	padding: 				0 var(--margin-unit);
+    min-height: 			2.5rem;
     align-items: 			center;
 }
 
 .posttitletext	{
-	margin-left:			20px;
+	margin-left:			var(--margin-unit);
 }
 
 .posttitleleft	{
@@ -212,15 +206,15 @@ h6	{
 .postcontent	{
 	display: 				flex;
 	color: 					#fff;
-	padding: 				12px;
+	padding: 				var(--margin-unit);
 }
 
 .postcontentleft	{
-	margin-right: 			4px;
+	margin-right: 			calc(var(--margin-unit) * 0.5);
 }
 
 .postcontentright	{
-	margin-left: 			4px;
+	margin-left: 			calc(var(--margin-unit) * 0.5);
 }
 
 .postcontentcenter	{
@@ -239,7 +233,7 @@ h6	{
 .footertext	{
 	color: 					#fff;
 }
-/* старый навбар который я любил
+/* ÑÑ‚Ð°Ñ€Ñ‹Ð¹ Ð½Ð°Ð²Ð±Ð°Ñ€ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ñ Ð»ÑŽÐ±Ð¸Ð»
 .dropdown	{
 	position: 				relative;
 	display: 				inline-block;
@@ -417,7 +411,7 @@ img	{
 	max-height:				78px;
 }
 
-/* флексы чтобы делать посты шире-уже */
+/* Ñ„Ð»ÐµÐºÑÑ‹ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð¿Ð¾ÑÑ‚Ñ‹ ÑˆÐ¸Ñ€Ðµ-ÑƒÐ¶Ðµ */
 
 .f1	{
 	flex: 					1;
@@ -459,7 +453,7 @@ img	{
 	flex: 					10;
 }
 
-/* новый навбар на jquery */
+/* Ð½Ð¾Ð²Ñ‹Ð¹ Ð½Ð°Ð²Ð±Ð°Ñ€ Ð½Ð° jquery */
 
 .navbar	{
 	overflow: hidden;
@@ -496,7 +490,7 @@ img	{
 	border: none;
 	outline: none;
 	color: white;
-	padding: 8px 16px; /* почему-то тут паддинг должен быть на один px в высоту больше чем в .navbar, иначе неровно */
+	padding: 8px 16px; /* Ð¿Ð¾Ñ‡ÐµÐ¼Ñƒ-Ñ‚Ð¾ Ñ‚ÑƒÑ‚ Ð¿Ð°Ð´Ð´Ð¸Ð½Ð³ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð½Ð° Ð¾Ð´Ð¸Ð½ px Ð² Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‡ÐµÐ¼ Ð² .navbar, Ð¸Ð½Ð°Ñ‡Ðµ Ð½ÐµÑ€Ð¾Ð²Ð½Ð¾ */
 	text-shadow: var(--textshadow);
 	font-family: inherit;
 	margin: 0;
@@ -559,11 +553,6 @@ img	{
 	max-width: 128px
 }
 
-.icon-in-text {
-	width: 14px;
-	height: 14px;
-}
-
 p {
     display: inherit;
     margin-block-start: 0;
@@ -605,13 +594,16 @@ p {
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 767px) {
 	.containerstack {display: block;}
 	.postcontentleft {margin: auto;}
-	
+	.splide__pagination {display: none !important;}
+	:root {--html-font-size: 2vw;}
+	:root {--border-radius: 0;}
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
 	.containerstack {display: flex;}
+	.splide__pagination {display: flex !important;}
 }
 
 .splide {
