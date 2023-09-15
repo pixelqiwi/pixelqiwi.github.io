@@ -392,7 +392,7 @@ img	{
 	display: 				flex;
 	gap: 					4px;
 	flex-wrap: 				wrap;
-	justify-content: 		center;
+	justify-content: 		space-between;
 	width: 					100%;
 }
 
@@ -411,7 +411,7 @@ img	{
 	max-height:				78px;
 }
 
-/* Ñ„Ð»ÐµÐºÑÑ‹ Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð¿Ð¾ÑÑ‚Ñ‹ ÑˆÐ¸Ñ€Ðµ-ÑƒÐ¶Ðµ */
+/* флексы чтобы делать посты шире-уже */
 
 .f1	{
 	flex: 					1;
@@ -453,7 +453,7 @@ img	{
 	flex: 					10;
 }
 
-/* Ð½Ð¾Ð²Ñ‹Ð¹ Ð½Ð°Ð²Ð±Ð°Ñ€ Ð½Ð° jquery */
+/* новый навбар на jquery */
 
 .navbar	{
 	overflow: hidden;
@@ -472,7 +472,8 @@ img	{
 .navbar a	{
 	float: left;
 	text-align: center;
-	padding: 8px 16px; 
+	font-size: calc(var(--html-font-size)*1.1);
+	padding: var(--margin-unit) calc(var(--margin-unit)*2); 
 	color: white;
 	text-decoration: none;
 	line-height: var(--html-line-height);
@@ -486,11 +487,11 @@ img	{
 
 .dropdown .dropbtn {
 	cursor: pointer;
-	font-size: var(--html-font-size);
+	font-size: calc(var(--html-font-size)*1.1);
 	border: none;
 	outline: none;
 	color: white;
-	padding: 8px 16px; /* Ð¿Ð¾Ñ‡ÐµÐ¼Ñƒ-Ñ‚Ð¾ Ñ‚ÑƒÑ‚ Ð¿Ð°Ð´Ð´Ð¸Ð½Ð³ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð½Ð° Ð¾Ð´Ð¸Ð½ px Ð² Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ‡ÐµÐ¼ Ð² .navbar, Ð¸Ð½Ð°Ñ‡Ðµ Ð½ÐµÑ€Ð¾Ð²Ð½Ð¾ */
+	padding: var(--margin-unit) calc(var(--margin-unit)*2); /* почему-то тут паддинг должен быть на один px в высоту больше чем в .navbar, иначе неровно */
 	text-shadow: var(--textshadow);
 	font-family: inherit;
 	margin: 0;
@@ -514,7 +515,7 @@ img	{
 .dropdown-content a	{
 	float: none;
 	color: #fff;
-	padding: 8px 16px;
+	padding: var(--margin-unit) calc(var(--margin-unit)*2);
 	text-decoration: none;
 	display: block;
 	text-align: left;
@@ -567,8 +568,12 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 128px;
+}
+
+.icon-in-text {
+	height: 1rem;
 }
 
 .button {
