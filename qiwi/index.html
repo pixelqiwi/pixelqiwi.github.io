@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QIWI Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 360px; /* Уменьшена ширина контейнера */
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            margin-bottom: 20px;
+            width: 150px;
+        }
+        .button {
+            display: block;
+            width: calc(100% - 20px); /* Корректировка ширины кнопок */
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            background-image: linear-gradient(to right, #007BFF, #0056b3);
+            border: none;
+            box-sizing: border-box;
+        }
+        .button-orange {
+            background-image: linear-gradient(to right, #FFA500, #ff7f00);
+        }
+        .info {
+            margin-top: 20px;
+            color: grey;
+            font-size: 14px;
+        }
+        .header {
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .date {
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="time"></div>
+        <div class="date" id="date"></div>
+        <img src="qiwi_logo.png" alt="QIWI" class="logo">
+        <a href="#" class="button">ОПЛАТА УСЛУГ</a>
+        <a href="#" class="button button-orange">QIWI КОШЕЛЁК</a>
+        <a href="#" class="button">ШТРАФЫ ГОСПОШЛИНЫ</a>
+        <div class="info">Информация</div>
+        <div class="info">Тел.: 8-800-3330059</div>
+    </div>
+
+    <script>
+        function updateTimeAndDate() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const day = now.getDate();
+            const month = now.toLocaleString('default', { month: 'long' });
+            const dayOfWeek = now.toLocaleString('default', { weekday: 'long' });
+
+            document.getElementById('time').textContent = `${hours}:${minutes}`;
+            document.getElementById('date').innerHTML = `${day} ${month}<br>${dayOfWeek}`;
+        }
+
+        setInterval(updateTimeAndDate, 1000);
+        updateTimeAndDate();  // Initial call to set the time and date immediately
+    </script>
+</body>
+</html>
